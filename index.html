@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flashcards</title>
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>Ka's flashcards</h1>
+                <p>They're all stored locally</p>
+            </header>
+
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <p class="title">Question</p>
+                        <p class="question-text">Hello</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <p class="title">Answer</p>
+                        <p class="answer-text">안녕하세요</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="menu">
+                <button id="add">+</button>
+                <button id="prev"><</button>
+                <button id="next">></button>
+            </div>
+
+            <div id="new-card">
+                <input
+                    type="text"
+                    id="question"
+                    placeholder="Question"
+                    name="question"
+                    required
+                />
+                <input
+                    type="text"
+                    id="answer"
+                    placeholder="Answer"
+                    name="answer"
+                    required
+                />
+
+                <button type="submit">Add card</button>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
