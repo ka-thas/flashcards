@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>Flashcards</title>
         <link rel="stylesheet" type="text/css" href="styles.css" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
     <body>
         <div class="container">
@@ -11,26 +13,65 @@
                 <p>They're all stored locally</p>
             </header>
 
+            <!-- Card itself -->
             <div class="flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <p class="title">Question</p>
-                        <p class="question-text">Hello</p>
+                        <p id="question-text">Hello</p>
                     </div>
                     <div class="flip-card-back">
                         <p class="title">Answer</p>
-                        <p class="answer-text">안녕하세요</p>
+                        <p id="answer-text">안녕하세요</p>
                     </div>
                 </div>
             </div>
 
+            <!-- Buttons with svg icons-->
             <div id="menu">
-                <button id="add">+</button>
-                <button id="prev"><</button>
-                <button id="next">></button>
+                <button id="delete">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="24px"
+                        viewBox="0 -960 960 960"
+                        width="24px"
+                        fill="#e8eaed"
+                    >
+                        <path
+                            d="M292.31-140q-29.92 0-51.12-21.19Q220-182.39 220-212.31V-720h-40v-60h180v-35.38h240V-780h180v60h-40v507.69Q740-182 719-161q-21 21-51.31 21H292.31ZM680-720H280v507.69q0 5.39 3.46 8.85t8.85 3.46h375.38q4.62 0 8.46-3.85 3.85-3.84 3.85-8.46V-720ZM376.16-280h59.99v-360h-59.99v360Zm147.69 0h59.99v-360h-59.99v360ZM280-720v520-520Z"
+                        />
+                    </svg>
+                </button>
+                <button id="add">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="24px"
+                        viewBox="0 -960 960 960"
+                        width="24px"
+                        fill="#e8eaed"
+                    >
+                        <path
+                            d="M450-450H220v-60h230v-230h60v230h230v60H510v230h-60v-230Z"
+                        />
+                    </svg>
+                </button>
+                <button id="next">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        height="24px"
+                        viewBox="0 -960 960 960"
+                        width="24px"
+                        fill="#e8eaed"
+                    >
+                        <path
+                            d="m553.85-253.85-42.16-43.38L664.46-450H180v-60h484.46L511.69-662.77l42.16-43.38L780-480 553.85-253.85Z"
+                        />
+                    </svg>
+                </button>
             </div>
 
-            <div id="new-card">
+            <!-- Form for adding new cards -->
+            <div id="form">
                 <input
                     type="text"
                     id="question"
@@ -46,7 +87,7 @@
                     required
                 />
 
-                <button type="submit">Add card</button>
+                <button type="submit" id="submit">Add card</button>
             </div>
         </div>
 
