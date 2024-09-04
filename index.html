@@ -9,8 +9,7 @@
     <body>
         <div class="container">
             <header>
-                <h1>Ka's flashcards</h1>
-                <p>They're all stored locally</p>
+                <h1>Flashcards</h1>
             </header>
 
             <!-- Card itself -->
@@ -18,11 +17,11 @@
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <p class="title">Question</p>
-                        <p id="question-text">Hello</p>
+                        <p id="question-text">_________</p>
                     </div>
                     <div class="flip-card-back">
                         <p class="title">Answer</p>
-                        <p id="answer-text">안녕하세요</p>
+                        <p id="answer-text">_________</p>
                     </div>
                 </div>
             </div>
@@ -86,8 +85,20 @@
                     name="answer"
                     required
                 />
-
-                <button type="submit" id="submit">Add card</button>
+                <div class="row">
+                    <button
+                        type="reset"
+                        id="close"
+                        style="
+                            background-color: transparent;
+                            border: 1px solid black;
+                            color: black;
+                        "
+                    >
+                        Close
+                    </button>
+                    <button type="submit" id="submit">Add card</button>
+                </div>
             </div>
         </div>
 
