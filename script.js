@@ -42,16 +42,38 @@ function main() {
     }
     load_flashcards();
     console.log(allFlashcards);
+    pick_random_flashcard();
 }
 
 
 function pick_random_flashcard() {
-    console.log(allFlashcards);
-    currentFlashcardIndex = Math.floor(Math.random() * allFlashcards.length);
+    const prev = currentFlashcardIndex;
+
+    if (allFlashcards.length === 0) {
+        questionText.textContent = "No flashcards available";
+        answerText.textContent = "No flashcards available";
+
+        return;
+    }
+    else if (allFlashcards.length === 1) {
+        currentFlashcardIndex = 0;
+    }
+    else {
+        while (prev === currentFlashcardIndex) {
+            currentFlashcardIndex = Math.floor(Math.random() * allFlashcards.length);
+        }
+    }
+
     const randomFlashcard = allFlashcards[currentFlashcardIndex];
 
     questionText.textContent = randomFlashcard.question;
     answerText.textContent = randomFlashcard.answer;
+
+    if (answerText.scrollHeight > 200) {
+        answerText.style.overflowY = "scroll";
+    } else {
+        answerText.style.overflowY = "visible";
+    }
 }
 
 
@@ -68,14 +90,7 @@ function load_flashcards() {
     const storedFlashcardsString = localStorage.getItem('flashcards');
     
     // Parse the string back to an array
-    const storedFlashcards = JSON.parse(storedFlashcardsString);
-    
-    // Check if flashcards were successfully retrieved
-    if (storedFlashcards) {
-      console.log(storedFlashcards); // Use the array as needed
-    } else {
-      console.log('No flashcards found in localStorage.');
-    }
+    allFlashcards = JSON.parse(storedFlashcardsString);
 }
 
 function show_form() {
@@ -95,9 +110,24 @@ function add_flashcard() {
     const question = questionInput.value;
     const answer = answerInput.value;
 
+    if (question === '' || answer === '') {
+        alert('Please fill out both fields');
+        return;
+    }
+
+    if (question.length > 180) {
+        alert('Character limit exceeded for question (maximum 180 characters)');
+        return;
+    }
+
     allFlashcards.push({ question, answer });
 
     save_flashcards();
+
+    // Clear the input fields
+    questionInput.value = '';
+    answerInput.value = '';
+    console.log(allFlashcards);
 }
 
 function delete_flashcard() {

@@ -26,11 +26,10 @@ h1 {
     background-color: var(--background-color);
     margin: 0;
 }
-
-main {
-    padding: 0px;
-    max-width: 1000px;
-    margin: 0 auto;
+p {
+    margin: 10px;
+    word-wrap: break-word;
+    hyphens: auto;
 }
 #breadcrumbs,
 #breadcrumbs a {
