@@ -1,107 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Flashcards</title>
-        <link rel="stylesheet" type="text/css" href="styles.css" />
-        <meta charset="UTF-8" />
+        <title>Ka Thas</title>
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="../../css/stylesheet.css"
+        />
+        <link rel="icon" href="./assets/images/icon.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="UTF-8" />
+        <style>
+            main {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+                text-align: center;
+                max-width: 450px;
+            }
+            #next,
+            button {
+                font-size: 20px;
+                font-family: Arial, Helvetica, sans-serif;
+                color: #151;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 100px;
+                background-color: #f1f1f1;
+                cursor: pointer;
+            }
+            #question {
+                font-size: 30px;
+                font-family: Arial, Helvetica, sans-serif;
+
+                text-align: left;
+                height: 300px;
+                background-color: #f1f1f111;
+                padding: 20px;
+                border-radius: 20px;
+                border-top: 1px solid #dfda;
+                box-shadow: 0px 5px 5px #0202;
+            }
+            #flashcards {
+                display: none;
+            }
+        </style>
     </head>
     <body>
-        <div class="container">
-            <header>
-                <h1>Flashcards</h1>
-            </header>
+        <main id="menu">
+            <h1>Choose a collection</h1>
+            <div id="collections"></div>
+        </main>
+        <main id="flashcards">
+            <h1 style="font-size: 30px" id="title"></h1>
+            <br />
 
-            <!-- Card itself -->
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <p class="title">Question</p>
-                        <p id="question-text">_________</p>
-                    </div>
-                    <div class="flip-card-back">
-                        <p class="title">Answer</p>
-                        <p id="answer-text">_________</p>
-                    </div>
-                </div>
-            </div>
+            <h2 id="question"></h2>
+            <br />
 
-            <!-- Buttons with svg icons-->
-            <div id="menu">
-                <button id="delete">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24px"
-                        viewBox="0 -960 960 960"
-                        width="24px"
-                        fill="#e8eaed"
-                    >
-                        <path
-                            d="M292.31-140q-29.92 0-51.12-21.19Q220-182.39 220-212.31V-720h-40v-60h180v-35.38h240V-780h180v60h-40v507.69Q740-182 719-161q-21 21-51.31 21H292.31ZM680-720H280v507.69q0 5.39 3.46 8.85t8.85 3.46h375.38q4.62 0 8.46-3.85 3.85-3.84 3.85-8.46V-720ZM376.16-280h59.99v-360h-59.99v360Zm147.69 0h59.99v-360h-59.99v360ZM280-720v520-520Z"
-                        />
-                    </svg>
-                </button>
-                <button id="add">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24px"
-                        viewBox="0 -960 960 960"
-                        width="24px"
-                        fill="#e8eaed"
-                    >
-                        <path
-                            d="M450-450H220v-60h230v-230h60v230h230v60H510v230h-60v-230Z"
-                        />
-                    </svg>
-                </button>
-                <button id="next">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24px"
-                        viewBox="0 -960 960 960"
-                        width="24px"
-                        fill="#e8eaed"
-                    >
-                        <path
-                            d="m553.85-253.85-42.16-43.38L664.46-450H180v-60h484.46L511.69-662.77l42.16-43.38L780-480 553.85-253.85Z"
-                        />
-                    </svg>
-                </button>
-            </div>
+            <button id="back-to-menu">Menu</button>
+            <button id="next">Next →</button>
+            <footer>
+                <p style="text-align: center">🌱</p>
+            </footer>
+        </main>
+        <script>
+            let question = document.getElementById("question");
+            let next = document.getElementById("next");
+            let title = document.getElementById("title");
+            let backToMenu = document.getElementById("back-to-menu");
+            let questions = [];
+            let data = [];
 
-            <!-- Form for adding new cards -->
-            <div id="form">
-                <input
-                    type="text"
-                    id="question"
-                    placeholder="Question"
-                    name="question"
-                    required
-                />
-                <input
-                    type="text"
-                    id="answer"
-                    placeholder="Answer"
-                    name="answer"
-                    required
-                />
-                <div class="row">
-                    <button
-                        type="reset"
-                        id="close"
-                        style="
-                            background-color: transparent;
-                            border: 1px solid black;
-                            color: black;
-                        "
-                    >
-                        Close
-                    </button>
-                    <button type="submit" id="submit">Add card</button>
-                </div>
-            </div>
-        </div>
+            async function fetchCollections() {
+                const response = await fetch("data.JSON");
+                data = await response.json();
+                console.log(data);
+                const collectionsDiv = document.getElementById("collections");
+                for (const collectionName in data) {
+                    const button = document.createElement("button");
+                    button.textContent = data[collectionName].title;
+                    button.onclick = () => loadCollection(collectionName);
+                    button.id = "next";
+                    button.style.margin = "10px";
+                    collectionsDiv.appendChild(button);
+                }
+            }
 
-        <script src="script.js"></script>
+            function loadCollection(name) {
+                document.getElementById("menu").style.display = "none";
+                document.getElementById("flashcards").style.display = "block";
+                title.textContent = data[name].title;
+                questions = data[name].questions;
+
+                let currentQuestion = Math.floor(
+                    Math.random() * questions.length
+                );
+
+                question.textContent = questions[currentQuestion];
+            }
+
+            fetchCollections();
+
+            next.addEventListener("click", () => {
+                currentQuestion = Math.floor(Math.random() * questions.length);
+                question.textContent = questions[currentQuestion];
+            });
+
+            backToMenu.addEventListener("click", () => {
+                document.getElementById("menu").style.display = "block";
+                document.getElementById("flashcards").style.display = "none";
+            });
+        </script>
     </body>
 </html>
