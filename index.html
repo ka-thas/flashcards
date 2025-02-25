@@ -75,7 +75,7 @@
             let data = [];
 
             async function fetchCollections() {
-                const response = await fetch("data.JSON");
+                const response = await fetch("data.json");
                 data = await response.json();
                 console.log(data);
                 const collectionsDiv = document.getElementById("collections");
