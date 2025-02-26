@@ -101,9 +101,9 @@ let question = document.getElementById("question");
             shuffleToggle.addEventListener("click", () => {
                 shuffle = !shuffle;
                 if (shuffle) {
-                    shuffleToggle.style.backgroundColor = "#aca";
+                    shuffleToggle.style.backgroundColor = "#acaa";
                 } else {
-                    shuffleToggle.style.backgroundColor = "#f1f1f1";
+                    shuffleToggle.style.backgroundColor = "#aca4";
                 }
             });
 
