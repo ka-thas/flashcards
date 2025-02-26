@@ -4,11 +4,26 @@
         "description": "Flashcards med OS begreper",
         "credit": "",
         "questions": [
-            "CPU",
-            "ALU",
-            "RAM",
-            "ROM",
-            "Cache",
+            {
+                "q": "CPU",
+                "a": "Central Processing Unit - The primary component of a computer that performs most of the processing"
+            },
+            {
+                "q": "ALU",
+                "a": "Arithmetic Logic Unit - Performs arithmetic and logical operations"
+            },
+            {
+                "q": "RAM",
+                "a": "Random Access Memory - Volatile memory used for temporary data storage"
+            },
+            {
+                "q": "ROM",
+                "a": "Read Only Memory - Non-volatile memory that retains data when powered off"
+            },
+            {
+                "q": "Cache",
+                "a": "Fast memory that sits between main memory and CPU to speed up data access"
+            },
             "Shared memory",
             "Message passing",
             "Pipes",
@@ -118,7 +133,7 @@
             "N-Step SCAN",
             "FSCAN (Modified SCAN for multiple queues)",
             "First-In, First-Out (FIFO)",
-            "Optimal Page Replacement (OPT or Bélády’s Algorithm)",
+            "Optimal Page Replacement (OPT or Bélády's Algorithm)",
             "Least Recently Used (LRU)",
             "Least Frequently Used (LFU)",
             "Clock Algorithm",
@@ -133,37 +148,75 @@
         "title": "IN2140 Network 📡",
         "description": "Flashcards med Network begreper",
         "credit": "",
-        "questions": ["TODO"]
+        "questions": [
+            {
+                "q": "TODO",
+                "a": ""
+            }
+        ]
     },
     "IN3050-ea": {
         "title": "IN3050 Evolutionary Algorithms 🧬",
         "description": "Flashcards med EA begreper",
         "credit": "",
-        "questions": ["TODO"]
+        "questions": [
+            {
+                "q": "TODO",
+                "a": ""
+            }
+        ]
     },
     "IN3050-supervised": {
         "title": "IN3050 Supervised Learning 🧠",
         "description": "Flashcards med supervised begreper",
         "credit": "",
-        "questions": ["TODO"]
+        "questions": [
+            {
+                "q": "TODO",
+                "a": ""
+            }
+        ]
     },
     "IN3050-unsupervised": {
         "title": "IN3050 Unsupervised Learning 🧠",
         "description": "Flashcards med unsupervised begreper",
         "credit": "",
-        "questions": ["TODO"]
+        "questions": [
+            {
+                "q": "TODO",
+                "a": ""
+            }
+        ]
     },
     "IN1030": {
         "title": "IN1030",
         "description": "Flashcards med IN1030 begreper",
         "credit": "",
         "questions": [
-            "scrum",
-            "kanban",
-            "agile",
-            "waterfall",
-            "sprint",
-            "iteration"
+            {
+                "q": "scrum",
+                "a": "An agile framework for managing complex work with an emphasis on software development"
+            },
+            {
+                "q": "kanban",
+                "a": "A visual system for managing work as it moves through a process"
+            },
+            {
+                "q": "agile",
+                "a": "An iterative approach to project management and software development"
+            },
+            {
+                "q": "waterfall",
+                "a": "A linear sequential approach to software development"
+            },
+            {
+                "q": "sprint",
+                "a": "A fixed time period during which specific work has to be completed in Scrum"
+            },
+            {
+                "q": "iteration",
+                "a": "A single development cycle in an agile methodology"
+            }
         ]
     }
 }

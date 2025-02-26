@@ -1,137 +1,143 @@
-// Description: This script is for a flashcard app that allows users to add, delete, and view flashcards.
-
-// Variables
-// Card
-const questionText = document.getElementById('question-text');
-const answerText = document.getElementById('answer-text');
-// Menu
-const menuEl = document.getElementById('menu');
-const delBtn = document.getElementById('delete');
-const plusBtn = document.getElementById('add');
-const nextBtn = document.getElementById('next');
-// Form
-const formEl = document.getElementById('form');
-const questionInput = document.getElementById('question');
-const answerInput = document.getElementById('answer');
-const closeBtn = document.getElementById('close');
-const submitBtn = document.getElementById('submit');
-// Logic
-let allFlashcards = [];
-let currentFlashcardIndex = 0;
-
-
-main();
-
-function main() {
-    
-    // Event listeners
-    delBtn.addEventListener('click', delete_flashcard);
-    plusBtn.addEventListener('click', show_form);
-    nextBtn.addEventListener('click', pick_random_flashcard);
-    submitBtn.addEventListener('click', add_flashcard);
-    closeBtn.addEventListener('click', hide_form);
+let question = document.getElementById("question");
+            let next = document.getElementById("next");
+            let previous = document.getElementById("previous");
+            let title = document.getElementById("title");
+            let backToMenu = document.getElementById("back-to-menu");
+            let number = document.getElementById("number");
+            let shuffleToggle = document.getElementById("shuffle-toggle");
+            let listToggle = document.getElementById("list-toggle");
+            let listContainer = document.getElementById("list-container");
+            let questions = [];
+            let data = [];
+            let previousQuestions = [];
+            let shuffle = false;
+            let currentCollection = "";
+            let currentQuestion = 0;
+            let showlist = false;
+            let answer = document.getElementById("answer");
+            let questionContainer =
+                document.getElementById("question-container");
 
 
+            async function fetchCollections() {
+                const response = await fetch("data.json");
+                data = await response.json();
+                console.log(data);
+                const collectionsDiv = document.getElementById("collections");
+                for (const collectionName in data) {
+                    const button = document.createElement("button");
+                    button.textContent = data[collectionName].title;
+                    button.onclick = () => loadCollection(collectionName);
+                    button.id = "collection-button";
+                    button.style.margin = "6px";
+                    collectionsDiv.appendChild(button);
+                }
+            }
 
-    if (!localStorage.getItem('flashcards')) { // If there are no flashcards in local storage
-        allFlashcards = [
-            { question: "Who created Simula?", answer: "Kristen Nygård and Ole Johan Dahl" },
-            { question: "Hello in Korean", answer: "안녕하세요" },
-        ];
-            save_flashcards();
-    }
-    load_flashcards();
-    console.log(allFlashcards);
-    pick_random_flashcard();
-}
+            function loadCollection(name) {
+                currentCollection = name;
+                document.getElementById("main-menu").style.display = "none";
+                document.getElementById("flashcards").style.display = "block";
+                title.textContent = data[name].title;
+                questions = data[name].questions;
+                if (shuffle) {
+                    currentQuestion = Math.floor(
+                        Math.random() * questions.length
+                    );
+                }
+                displayCurrentQuestion();
+                loadList();
+            }
 
+            function displayCurrentQuestion() {
+                const currentQ = questions[currentQuestion];
+                
+                // Reset answer opacity instantly before changing content
+                answer.style.transition = "opacity 0s";
+                answer.style.opacity = "0";
+                
+                // Small delay to ensure opacity is reset
+                setTimeout(() => {
+                    if (typeof currentQ === 'string') {
+                        question.textContent = currentQ;
+                        answer.textContent = '';
+                    } else {
+                        question.textContent = currentQ.q;
+                        answer.textContent = currentQ.a;
+                    }
+                    // Restore transition for future clicks
+                    answer.style.transition = "opacity 0.3s ease";
+                }, 50);
+                
+                number.textContent = `${currentQuestion + 1} / ${questions.length}`;
+            }
 
-function pick_random_flashcard() {
-    const prev = currentFlashcardIndex;
+            next.addEventListener("click", () => {
+                previousQuestions.push(currentQuestion);
+                if (shuffle) {
+                    currentQuestion = Math.floor(
+                        Math.random() * questions.length
+                    );
+                } else {
+                    currentQuestion = (currentQuestion + 1) % questions.length;
+                }
 
-    if (allFlashcards.length === 0) {
-        questionText.textContent = "No flashcards available";
-        answerText.textContent = "No flashcards available";
+                displayCurrentQuestion();
+            });
 
-        return;
-    }
-    else if (allFlashcards.length === 1) {
-        currentFlashcardIndex = 0;
-    }
-    else {
-        while (prev === currentFlashcardIndex) {
-            currentFlashcardIndex = Math.floor(Math.random() * allFlashcards.length);
-        }
-    }
+            previous.addEventListener("click", () => {
+                if (previousQuestions.length > 0) {
+                    currentQuestion = previousQuestions.pop();
+                    displayCurrentQuestion();
+                }
+            });
 
-    const randomFlashcard = allFlashcards[currentFlashcardIndex];
+            backToMenu.addEventListener("click", () => {
+                document.getElementById("main-menu").style.display = "block";
+                document.getElementById("flashcards").style.display = "none";
+                previousQuestions = [];
+            });
 
-    questionText.textContent = randomFlashcard.question;
-    answerText.textContent = randomFlashcard.answer;
+            shuffleToggle.addEventListener("click", () => {
+                shuffle = !shuffle;
+                if (shuffle) {
+                    shuffleToggle.style.backgroundColor = "#aca";
+                } else {
+                    shuffleToggle.style.backgroundColor = "#f1f1f1";
+                }
+            });
 
-    if (answerText.scrollHeight > 200) {
-        answerText.style.overflowY = "scroll";
-    } else {
-        answerText.style.overflowY = "visible";
-    }
-}
+            listToggle.addEventListener("click", () => {
+                showlist = !showlist;
+                if (showlist) {
+                    listContainer.style.display = "block";
+                    listToggle.style.backgroundColor = "#aca";
+                    setTimeout(() => {
+                        listContainer.scrollIntoView({ behavior: "smooth" });
+                    }, 100);
+                } else {
+                    listContainer.style.display = "none";
+                    listToggle.style.backgroundColor = "#f1f1f1";
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+            });
 
+            questionContainer.addEventListener("click", () => {
+                const currentQ = questions[currentQuestion];
+                if (typeof currentQ === "object" && currentQ.a) {
+                    answer.style.opacity =
+                        answer.style.opacity === "0" ? "1" : "0";
+                }
+            });
 
-// LOCAL STORAGE ----------------------------
-function save_flashcards() {
-    // Save the flashcards to local storage
-    const flashcardsString = JSON.stringify(allFlashcards);
-    localStorage.setItem('flashcards', flashcardsString);
-}
+            function loadList() {
+                const listContainer = document.getElementById("list-container");
+                listContainer.innerHTML = "";
+                questions.forEach((q) => {
+                    const listItem = document.createElement("li");
+                    listItem.textContent = typeof q === "string" ? q : q.q;
+                    listContainer.appendChild(listItem);
+                });
+            }
 
-function load_flashcards() {
-    // Retrieve the flashcards from local storage
-    // Get the string from localStorage
-    const storedFlashcardsString = localStorage.getItem('flashcards');
-    
-    // Parse the string back to an array
-    allFlashcards = JSON.parse(storedFlashcardsString);
-}
-
-function show_form() {
-    formEl.style.display = "block";
-    menuEl.style.marginBottom = "5px";
-}
-
-function hide_form() {
-    // Clear the input fields
-    questionInput.value = '';
-    answerInput.value = '';
-    formEl.style.display = "none";
-    menuEl.style.marginBottom = "133px";
-}
-
-function add_flashcard() {
-    const question = questionInput.value;
-    const answer = answerInput.value;
-
-    if (question === '' || answer === '') {
-        alert('Please fill out both fields');
-        return;
-    }
-
-    if (question.length > 180) {
-        alert('Character limit exceeded for question (maximum 180 characters)');
-        return;
-    }
-
-    allFlashcards.push({ question, answer });
-
-    save_flashcards();
-
-    // Clear the input fields
-    questionInput.value = '';
-    answerInput.value = '';
-    console.log(allFlashcards);
-}
-
-function delete_flashcard() {
-    allFlashcards.splice(currentFlashcardIndex, 1);
-    save_flashcards();
-    pick_random_flashcard();
-}
+            fetchCollections();
