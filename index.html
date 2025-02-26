@@ -7,7 +7,7 @@
             type="text/css"
             href="../../css/stylesheet.css"
         />
-        <link rel="icon" href="./assets/images/icon.png" />
+        <link rel="icon" href="../../assets/images/icon.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charset="UTF-8" />
         <style>
@@ -20,7 +20,9 @@
                 text-align: center;
                 max-width: 450px;
             }
-            #next,
+            html {
+                scroll-behavior: smooth;
+            }
             button {
                 font-size: 20px;
                 font-family: Arial, Helvetica, sans-serif;
@@ -31,20 +33,52 @@
                 background-color: #f1f1f1;
                 cursor: pointer;
             }
+            button:hover {
+                transform: scale(1.05);
+                transition: transform 0.1s ease-in-out;
+            }
             #question {
                 font-size: 30px;
                 font-family: Arial, Helvetica, sans-serif;
-
                 text-align: left;
+            }
+            #question-container {
                 height: 300px;
-                background-color: #f1f1f111;
-                padding: 20px;
                 border-radius: 20px;
+                padding: 20px;
+                margin: 20px;
+                background-color: #f1f1f111;
                 border-top: 1px solid #dfda;
                 box-shadow: 0px 5px 5px #0202;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
             }
             #flashcards {
                 display: none;
+            }
+            #number {
+                font-size: 20px;
+                font-family: Arial, Helvetica, sans-serif;
+                color: #aca;
+            }
+            #list-container {
+                display: none;
+                text-align: left;
+                padding: 20px;
+                margin: 20px;
+                background-color: #f1f1f111;
+                border-top: 1px solid #dfda;
+                box-shadow: 0px 5px 5px #0202;
+                border-radius: 20px;
+                padding-left: 50px;
+                scroll-margin-top: 20px;
+            }
+            li {
+                font-size: 16px;
+                font-family: Arial, Helvetica, sans-serif;
+                color: #fff;
             }
         </style>
     </head>
@@ -55,25 +89,37 @@
         </main>
         <main id="flashcards">
             <h1 style="font-size: 30px" id="title"></h1>
-            <br />
-
-            <h2 id="question"></h2>
-            <br />
-
-            <button id="back-to-menu">Menu</button>
-            <button id="next">Next →</button>
-            <footer>
-                <p style="text-align: center">🌱</p>
-            </footer>
+            <div id="question-container">
+                <p id="question"></p>
+                <p id="number"></p>
+            </div>
+            <div id="buttons">
+                <button id="back-to-menu">Menu</button>
+                <button id="previous">←</button>
+                <button id="next">→</button>
+                <button id="shuffle-toggle">🔄</button>
+                <button id="list-toggle">📄</button>
+            </div>
+            <ol id="list-container"></ol>
         </main>
+
         <script>
             let question = document.getElementById("question");
             let next = document.getElementById("next");
+            let previous = document.getElementById("previous");
             let title = document.getElementById("title");
             let backToMenu = document.getElementById("back-to-menu");
+            let number = document.getElementById("number");
+            let shuffleToggle = document.getElementById("shuffle-toggle");
+            let listToggle = document.getElementById("list-toggle");
+            let listContainer = document.getElementById("list-container");
             let questions = [];
             let data = [];
-
+            let previousQuestions = [];
+            let shuffle = false;
+            let currentCollection = "";
+            let currentQuestion = 0;
+            let showlist = false;
             async function fetchCollections() {
                 const response = await fetch("data.json");
                 data = await response.json();
@@ -84,35 +130,96 @@
                     button.textContent = data[collectionName].title;
                     button.onclick = () => loadCollection(collectionName);
                     button.id = "next";
-                    button.style.margin = "10px";
+                    button.style.margin = "6px";
                     collectionsDiv.appendChild(button);
                 }
             }
 
             function loadCollection(name) {
+                currentCollection = name;
                 document.getElementById("menu").style.display = "none";
                 document.getElementById("flashcards").style.display = "block";
                 title.textContent = data[name].title;
                 questions = data[name].questions;
-
-                let currentQuestion = Math.floor(
-                    Math.random() * questions.length
-                );
+                if (shuffle) {
+                    currentQuestion = Math.floor(
+                        Math.random() * questions.length
+                    );
+                }
 
                 question.textContent = questions[currentQuestion];
+                number.textContent = `${currentQuestion + 1} / ${
+                    questions.length
+                }`;
+                loadList();
             }
 
-            fetchCollections();
-
             next.addEventListener("click", () => {
-                currentQuestion = Math.floor(Math.random() * questions.length);
+                previousQuestions.push(currentQuestion);
+                if (shuffle) {
+                    currentQuestion = Math.floor(
+                        Math.random() * questions.length
+                    );
+                } else {
+                    currentQuestion++;
+                }
                 question.textContent = questions[currentQuestion];
+                number.textContent = `${currentQuestion + 1} / ${
+                    questions.length
+                }`;
+            });
+
+            previous.addEventListener("click", () => {
+                if (previousQuestions.length > 0) {
+                    currentQuestion = previousQuestions.pop();
+                    question.textContent = questions[currentQuestion];
+                    number.textContent = `${currentQuestion + 1} / ${
+                        questions.length
+                    }`;
+                }
             });
 
             backToMenu.addEventListener("click", () => {
                 document.getElementById("menu").style.display = "block";
                 document.getElementById("flashcards").style.display = "none";
+                previousQuestions = [];
             });
+
+            shuffleToggle.addEventListener("click", () => {
+                shuffle = !shuffle;
+                if (shuffle) {
+                    shuffleToggle.style.backgroundColor = "#aca";
+                } else {
+                    shuffleToggle.style.backgroundColor = "#f1f1f1";
+                }
+            });
+
+            listToggle.addEventListener("click", () => {
+                showlist = !showlist;
+                if (showlist) {
+                    listContainer.style.display = "block";
+                    listToggle.style.backgroundColor = "#aca";
+                    setTimeout(() => {
+                        listContainer.scrollIntoView({ behavior: "smooth" });
+                    }, 100);
+                } else {
+                    listContainer.style.display = "none";
+                    listToggle.style.backgroundColor = "#f1f1f1";
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+            });
+
+            function loadList() {
+                const listContainer = document.getElementById("list-container");
+                listContainer.innerHTML = "";
+                for (const question of questions) {
+                    const listItem = document.createElement("li");
+                    listItem.textContent = question;
+                    listContainer.appendChild(listItem);
+                }
+            }
+
+            fetchCollections();
         </script>
     </body>
 </html>

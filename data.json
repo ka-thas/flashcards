@@ -1,6 +1,6 @@
 {
     "IN2140-os": {
-        "title": "IN2140 OS",
+        "title": "IN2140 OS 💾",
         "description": "Flashcards med OS begreper",
         "credit": "",
         "questions": [
@@ -130,25 +130,25 @@
         ]
     },
     "IN2140-network": {
-        "title": "IN2140 Network",
+        "title": "IN2140 Network 📡",
         "description": "Flashcards med Network begreper",
         "credit": "",
         "questions": ["WIP"]
     },
     "IN3050-ea": {
-        "title": "IN3050 Evolutionary Algorithms",
+        "title": "IN3050 Evolutionary Algorithms 🧬",
         "description": "Flashcards med EA begreper",
         "credit": "",
         "questions": ["WIP"]
     },
     "IN3050-supervised": {
-        "title": "IN3050 Supervised Learning",
+        "title": "IN3050 Supervised Learning 🧠",
         "description": "Flashcards med supervised begreper",
         "credit": "",
         "questions": ["WIP"]
     },
     "IN3050-unsupervised": {
-        "title": "IN3050 Unsupervised Learning",
+        "title": "IN3050 Unsupervised Learning 🧠",
         "description": "Flashcards med unsupervised begreper",
         "credit": "",
         "questions": ["WIP"]
