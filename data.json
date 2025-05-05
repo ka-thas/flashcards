@@ -24,124 +24,456 @@
                 "q": "Cache",
                 "a": "Fast memory that sits between main memory and CPU to speed up data access"
             },
-            "Shared memory",
-            "Message passing",
-            "Pipes",
-            "Named pipes",
-            "Sockets",
-            "Signals",
-            "Semaphores",
-            "Mutex",
-            "Monitor",
-            "RPC (Remote Procedure Call)",
-            "Deadlock",
-            "Race condition",
-            "Synchronization",
-            "Critical section",
-            "Atomic operation",
-            "Producer-consumer",
-            "Reader-writer problem",
-            "Mailbox",
-            "Event queue",
-            "Condition variable",
-            "Process",
-            "Thread",
-            "Context switch",
-            "Process table",
-            "PCB (Process Control Block)",
-            "TCB (Thread Control Block)",
-            "Fork",
-            "Exec",
-            "Parent process",
-            "Child process",
-            "Zombie process",
-            "Orphan process",
-            "Multithreading",
-            "Multitasking",
-            "Time slicing",
-            "Scheduler",
-            "Preemptive scheduling",
-            "Round-robin",
-            "Priority scheduling",
-            "Real-time process",
-            "Virtual memory",
-            "Physical memory",
-            "Paging",
-            "Segmentation",
-            "MMU (Memory Management Unit)",
-            "Page fault",
-            "TLB (Translation Lookaside Buffer)",
-            "Page table",
-            "Swapping",
-            "Thrashing",
-            "Stack",
-            "Heap",
-            "Frame",
-            "Segment table",
-            "Address space",
-            "Logical address",
-            "Physical address",
-            "Fragmentation",
-            "Memory protection",
-            "Demand paging",
-            "File system",
-            "FAT (File Allocation Table)",
-            "NTFS (New Technology File System)",
-            "Inode",
-            "Disk scheduling",
-            "Seek time",
-            "Latency",
-            "Block device",
-            "Character device",
-            "SSD (Solid State Drive)",
-            "HDD (Hard Disk Drive)",
-            "RAID",
-            "File descriptor",
-            "Swap space",
-            "Kernel",
-            "Microkernel",
-            "Monolithic kernel",
-            "User mode",
-            "Kernel mode",
-            "Bootloader",
-            "Init system",
-            "System call",
-            "Daemon",
-            "Interrupt",
-            "Trap",
-            "Device driver",
-            "Load balancing",
-            "Cache",
-            "Process state",
-            "Scheduling queue",
-            "Resource allocation",
-            "First-Come, First-Served (FCFS)",
-            "Shortest Job Next (SJN) / Shortest Job First (SJF)",
-            "Shortest Remaining Time First (SRTF)",
-            "Round Robin (RR)",
-            "Priority Scheduling (Preemptive & Non-preemptive)",
-            "Multilevel Queue Scheduling",
-            "Multilevel Feedback Queue Scheduling",
-            "Highest Response Ratio Next (HRRN)",
-            "Lottery Scheduling",
-            "Earliest Deadline First (EDF) (Real-time scheduling)",
-            "Shortest Seek Time First (SSTF)",
-            "SCAN (Elevator Algorithm)",
-            "C-SCAN (Circular SCAN)",
-            "LOOK",
-            "C-LOOK (Circular LOOK)",
-            "N-Step SCAN",
-            "FSCAN (Modified SCAN for multiple queues)",
-            "First-In, First-Out (FIFO)",
-            "Optimal Page Replacement (OPT or Bélády's Algorithm)",
-            "Least Recently Used (LRU)",
-            "Least Frequently Used (LFU)",
-            "Clock Algorithm",
-            "Second Chance",
-            "Enhanced Second Chance",
-            "Random Replacement (RR)",
-            "Not Recently Used (NRU)",
-            "Aging Algorithm"
+            {
+                "q": "Shared memory",
+                "a": "A memory space accessible by multiple processes for communication"
+            },
+            {
+                "q": "Message passing",
+                "a": "Communication between processes through sending and receiving messages"
+            },
+            {
+                "q": "Pipes",
+                "a": "A unidirectional communication channel between processes"
+            },
+            {
+                "q": "Named pipes",
+                "a": "Pipes with a specific name that exist in the filesystem and allow unrelated processes to communicate"
+            },
+            {
+                "q": "Sockets",
+                "a": "Endpoints for communication between processes over a network"
+            },
+            {
+                "q": "Signals",
+                "a": "Asynchronous notifications sent to a process to notify it of events"
+            },
+            {
+                "q": "Semaphores",
+                "a": "Synchronization tools used to control access to shared resources"
+            },
+            {
+                "q": "Mutex",
+                "a": "Mutual Exclusion - A lock that allows only one thread to access a resource at a time"
+            },
+            {
+                "q": "Monitor",
+                "a": "A high-level synchronization construct that manages access to shared resources"
+            },
+            {
+                "q": "RPC (Remote Procedure Call)",
+                "a": "Procedure call where the executing code runs on another address space (often a remote server)"
+            },
+            {
+                "q": "Deadlock",
+                "a": "A situation where two or more processes are waiting indefinitely for each other to release resources"
+            },
+            {
+                "q": "Race condition",
+                "a": "A behavior where the system's outcome depends on the sequence or timing of uncontrollable events"
+            },
+            {
+                "q": "Synchronization",
+                "a": "Coordination of concurrent processes to ensure correct results"
+            },
+            {
+                "q": "Producer-consumer",
+                "a": "A classic problem where producers create data and consumers use it, requiring synchronization"
+            },
+            {
+                "q": "Reader-writer problem",
+                "a": "A synchronization issue where readers and writers must access shared data without conflicts"
+            },
+            {
+                "q": "Mailbox",
+                "a": "A message queue used for communication between processes"
+            },
+            {
+                "q": "Event queue",
+                "a": "A queue that holds events for a program to process asynchronously"
+            },
+            {
+                "q": "Condition variable",
+                "a": "A synchronization primitive that allows threads to wait for certain conditions to be met"
+            },
+            { "q": "Process", "a": "An instance of a running program" },
+            {
+                "q": "Thread",
+                "a": "The smallest unit of processing that can be scheduled by an OS"
+            },
+            {
+                "q": "Context switch",
+                "a": "The process of storing and restoring the state of a CPU so that multiple processes can share a single CPU"
+            },
+            {
+                "q": "Process table",
+                "a": "A data structure maintained by the OS to keep track of all processes"
+            },
+            {
+                "q": "PCB (Process Control Block)",
+                "a": "A data structure that stores information about a specific process"
+            },
+            {
+                "q": "TCB (Thread Control Block)",
+                "a": "A data structure that stores information about a specific thread"
+            },
+            {
+                "q": "Fork",
+                "a": "A system call to create a new process by duplicating an existing one"
+            },
+            {
+                "q": "Exec",
+                "a": "A system call to replace the current process image with a new process image"
+            },
+            {
+                "q": "Parent process",
+                "a": "A process that creates one or more child processes"
+            },
+            {
+                "q": "Child process",
+                "a": "A process created by another (parent) process"
+            },
+            {
+                "q": "Zombie process",
+                "a": "A process that has completed but still has an entry in the process table"
+            },
+            {
+                "q": "Orphan process",
+                "a": "A child process whose parent has terminated"
+            },
+            {
+                "q": "Multithreading",
+                "a": "Running multiple threads within a single process"
+            },
+            {
+                "q": "Multitasking",
+                "a": "Running multiple processes seemingly simultaneously"
+            },
+            {
+                "q": "Time slicing",
+                "a": "Dividing CPU time into slices for multiple processes"
+            },
+            {
+                "q": "Scheduler",
+                "a": "The part of the OS that decides which process runs next"
+            },
+            {
+                "q": "Preemptive scheduling",
+                "a": "The OS forcibly removes a running process to run another"
+            },
+            {
+                "q": "Round-robin",
+                "a": "A scheduling algorithm where each process gets an equal share of CPU time"
+            },
+            {
+                "q": "Priority scheduling",
+                "a": "Scheduling processes based on priority"
+            },
+            {
+                "q": "Real-time process",
+                "a": "A process that must complete within strict timing constraints"
+            },
+            {
+                "q": "Virtual memory",
+                "a": "An abstraction that provides the illusion of a very large memory"
+            },
+            {
+                "q": "Physical memory",
+                "a": "The actual RAM installed in the computer"
+            },
+            {
+                "q": "Paging",
+                "a": "Dividing memory into fixed-size pages to manage memory efficiently"
+            },
+            {
+                "q": "Segmentation",
+                "a": "Dividing memory into variable-sized segments based on logical divisions"
+            },
+            {
+                "q": "MMU (Memory Management Unit)",
+                "a": "Hardware that handles virtual to physical address translation"
+            },
+            {
+                "q": "Page fault",
+                "a": "An event that occurs when a program accesses a page not currently in memory"
+            },
+            {
+                "q": "TLB (Translation Lookaside Buffer)",
+                "a": "A cache that stores recent address translations"
+            },
+            {
+                "q": "Page table",
+                "a": "A data structure used to store the mapping between virtual addresses and physical addresses"
+            },
+            {
+                "q": "Swapping",
+                "a": "Moving entire processes between disk and memory"
+            },
+            {
+                "q": "Thrashing",
+                "a": "Excessive paging causing system slowdown"
+            },
+            {
+                "q": "Stack",
+                "a": "A memory region for function calls and local variables"
+            },
+            {
+                "q": "Heap",
+                "a": "A memory region for dynamically allocated memory"
+            },
+            {
+                "q": "Frame",
+                "a": "A fixed-size block of physical memory used in paging"
+            },
+            {
+                "q": "Segment table",
+                "a": "Table used in segmentation to store segment information"
+            },
+            {
+                "q": "Address space",
+                "a": "The range of memory addresses that a process can use"
+            },
+            {
+                "q": "Logical address",
+                "a": "Address generated by the CPU during a program’s execution"
+            },
+            {
+                "q": "Physical address",
+                "a": "The actual address in physical memory"
+            },
+            {
+                "q": "Fragmentation",
+                "a": "Wasted memory caused by inefficient allocation"
+            },
+            {
+                "q": "Memory protection",
+                "a": "Techniques to prevent processes from interfering with each other's memory"
+            },
+            {
+                "q": "Demand paging",
+                "a": "Loading pages into memory only when they are needed"
+            },
+            {
+                "q": "File system",
+                "a": "A way to organize and store files on storage devices"
+            },
+            {
+                "q": "FAT (File Allocation Table)",
+                "a": "A simple file system used in older and simpler storage devices"
+            },
+            {
+                "q": "NTFS (New Technology File System)",
+                "a": "A modern file system used by Windows with advanced features"
+            },
+            {
+                "q": "Inode",
+                "a": "A data structure used to represent a file in UNIX-based systems"
+            },
+            {
+                "q": "Disk scheduling",
+                "a": "Algorithms to decide the order of servicing disk I/O requests"
+            },
+            {
+                "q": "Seek time",
+                "a": "Time taken by the disk arm to move to the track where data is stored"
+            },
+            {
+                "q": "Latency",
+                "a": "Delay before data transfer begins following an instruction"
+            },
+            {
+                "q": "Block device",
+                "a": "A device that stores data in fixed-size blocks"
+            },
+            {
+                "q": "Character device",
+                "a": "A device that handles data as a stream of bytes"
+            },
+            {
+                "q": "SSD (Solid State Drive)",
+                "a": "A fast storage device using flash memory"
+            },
+            {
+                "q": "HDD (Hard Disk Drive)",
+                "a": "A traditional storage device using spinning disks"
+            },
+            {
+                "q": "RAID",
+                "a": "Redundant Array of Independent Disks - A way to store data across multiple disks for redundancy/performance"
+            },
+            {
+                "q": "File descriptor",
+                "a": "An integer that uniquely identifies an open file in a process"
+            },
+            {
+                "q": "Swap space",
+                "a": "Disk space used as an extension of RAM"
+            },
+            {
+                "q": "Kernel",
+                "a": "The core of the OS managing system resources"
+            },
+            {
+                "q": "Microkernel",
+                "a": "A minimalist kernel architecture providing only essential services"
+            },
+            {
+                "q": "Monolithic kernel",
+                "a": "A single large process running entirely in a single address space"
+            },
+            {
+                "q": "User mode",
+                "a": "A restricted mode where applications run"
+            },
+            { "q": "Kernel mode", "a": "A privileged mode where the OS runs" },
+            {
+                "q": "Bootloader",
+                "a": "Software that loads the OS when a computer starts"
+            },
+            {
+                "q": "Init system",
+                "a": "The first process started during booting to initialize the system"
+            },
+            {
+                "q": "System call",
+                "a": "A programmatic way for a user program to request service from the OS"
+            },
+            {
+                "q": "Daemon",
+                "a": "A background process that runs without user interaction"
+            },
+            {
+                "q": "Interrupt",
+                "a": "A signal to the CPU to indicate an event needs immediate attention"
+            },
+            {
+                "q": "Trap",
+                "a": "A software-generated interrupt caused by an error or a specific request"
+            },
+            {
+                "q": "Device driver",
+                "a": "Software that controls a hardware device"
+            },
+            {
+                "q": "Load balancing",
+                "a": "Distributing work evenly across resources"
+            },
+            {
+                "q": "Process state",
+                "a": "Current status of a process (e.g., running, waiting)"
+            },
+            {
+                "q": "Scheduling queue",
+                "a": "Queue where processes wait for CPU time"
+            },
+            {
+                "q": "Resource allocation",
+                "a": "Assigning available resources to tasks"
+            },
+            {
+                "q": "First-Come, First-Served (FCFS)",
+                "a": "Scheduling the process that arrives first"
+            },
+            {
+                "q": "Shortest Job Next (SJN) / Shortest Job First (SJF)",
+                "a": "Scheduling the process with the shortest execution time next"
+            },
+            {
+                "q": "Shortest Remaining Time First (SRTF)",
+                "a": "Preemptive version of SJF, selecting the process with the shortest remaining time"
+            },
+            {
+                "q": "Round Robin (RR)",
+                "a": "Assigns a fixed time unit per process in rotation"
+            },
+            {
+                "q": "Priority Scheduling (Preemptive & Non-preemptive)",
+                "a": "Scheduling based on priority, optionally preempting lower priority processes"
+            },
+            {
+                "q": "Multilevel Queue Scheduling",
+                "a": "Multiple queues with different priority levels"
+            },
+            {
+                "q": "Multilevel Feedback Queue Scheduling",
+                "a": "Processes can move between queues based on behavior and requirements"
+            },
+            {
+                "q": "Highest Response Ratio Next (HRRN)",
+                "a": "Scheduling based on highest response ratio to minimize waiting time"
+            },
+            {
+                "q": "Lottery Scheduling",
+                "a": "Processes are given lottery tickets for CPU time allocation"
+            },
+            {
+                "q": "Earliest Deadline First (EDF)",
+                "a": "Schedules tasks based on earliest deadlines"
+            },
+            {
+                "q": "Shortest Seek Time First (SSTF)",
+                "a": "Services the disk I/O request closest to the current head position"
+            },
+            {
+                "q": "SCAN (Elevator Algorithm)",
+                "a": "Moves disk arm in one direction, servicing all requests"
+            },
+            {
+                "q": "C-SCAN (Circular SCAN)",
+                "a": "Disk arm services requests in one direction and jumps back to start"
+            },
+            {
+                "q": "LOOK",
+                "a": "SCAN but reverses direction immediately when no more requests exist in current direction"
+            },
+            {
+                "q": "C-LOOK",
+                "a": "C-SCAN but only goes as far as the last request before jumping"
+            },
+            {
+                "q": "N-Step SCAN",
+                "a": "SCAN that divides requests into sub-queues for better service"
+            },
+            {
+                "q": "FSCAN",
+                "a": "Modified SCAN using two queues to improve performance"
+            },
+            {
+                "q": "First-In, First-Out (FIFO)",
+                "a": "Replaces the oldest page in memory"
+            },
+            {
+                "q": "Least Recently Used (LRU)",
+                "a": "Replaces the page that has not been used for the longest time"
+            },
+            {
+                "q": "Least Frequently Used (LFU)",
+                "a": "Replaces the page used least often"
+            },
+            {
+                "q": "Clock Algorithm",
+                "a": "Approximation of LRU using a circular buffer"
+            },
+            {
+                "q": "Second Chance",
+                "a": "A Clock variant giving pages a second chance before replacement"
+            },
+            {
+                "q": "Enhanced Second Chance",
+                "a": "Improved Clock algorithm using reference and modification bits"
+            },
+            {
+                "q": "Random Replacement (RR)",
+                "a": "Randomly replaces a page in memory"
+            },
+            {
+                "q": "Not Recently Used (NRU)",
+                "a": "Replaces pages based on referenced and modified bits"
+            },
+            {
+                "q": "Aging Algorithm",
+                "a": "Keeps track of page usage over time to approximate LRU"
+            }
         ]
     },
     "IN2140-network": {
@@ -150,8 +482,296 @@
         "credit": "",
         "questions": [
             {
-                "q": "TODO",
-                "a": ""
+                "q": "IP address (Internet Protocol address)",
+                "a": "A unique identifier for a device on a network"
+            },
+            {
+                "q": "MAC address (Media Access Control address)",
+                "a": "Hardware address that identifies a network interface"
+            },
+            {
+                "q": "Subnet mask",
+                "a": "Defines the network and host portions of an IP address"
+            },
+            {
+                "q": "Router",
+                "a": "Device that forwards data between networks"
+            },
+            {
+                "q": "Switch",
+                "a": "Device that connects devices within the same network"
+            },
+            {
+                "q": "Hub",
+                "a": "Basic device that broadcasts data to all connected devices"
+            },
+            {
+                "q": "Gateway",
+                "a": "Connects different networks and translates protocols"
+            },
+            { "q": "Packet", "a": "A small unit of data sent over a network" },
+            { "q": "Frame", "a": "Data packet at the Data Link layer" },
+            {
+                "q": "Port number",
+                "a": "Identifies specific processes or services on a device"
+            },
+            {
+                "q": "TCP (Transmission Control Protocol)",
+                "a": "Reliable, connection-oriented transport protocol"
+            },
+            {
+                "q": "UDP (User Datagram Protocol)",
+                "a": "Connectionless, faster transport protocol without guarantees"
+            },
+            {
+                "q": "DNS (Domain Name System)",
+                "a": "Resolves domain names to IP addresses"
+            },
+            {
+                "q": "DHCP (Dynamic Host Configuration Protocol)",
+                "a": "Automatically assigns IP addresses to devices"
+            },
+            {
+                "q": "NAT (Network Address Translation)",
+                "a": "Translates private IPs to a public IP"
+            },
+            {
+                "q": "ARP (Address Resolution Protocol)",
+                "a": "Maps IP addresses to MAC addresses"
+            },
+            {
+                "q": "ICMP (Internet Control Message Protocol)",
+                "a": "Sends error and status messages (like ping)"
+            },
+            {
+                "q": "Socket",
+                "a": "Endpoint for sending or receiving data across a network"
+            },
+            { "q": "Firewall", "a": "Filters network traffic for security" },
+            {
+                "q": "VPN (Virtual Private Network)",
+                "a": "Creates a secure tunnel over the internet"
+            },
+            {
+                "q": "SSL/TLS (Secure Sockets Layer / Transport Layer Security)",
+                "a": "Encrypts data for secure communication"
+            },
+            {
+                "q": "HTTP (HyperText Transfer Protocol)",
+                "a": "Protocol for transferring web pages"
+            },
+            {
+                "q": "HTTPS (HyperText Transfer Protocol Secure)",
+                "a": "Secure version of HTTP using encryption"
+            },
+            {
+                "q": "FTP (File Transfer Protocol)",
+                "a": "Transfers files over a network"
+            },
+            {
+                "q": "SFTP (SSH File Transfer Protocol)",
+                "a": "Secure file transfer protocol over SSH"
+            },
+            { "q": "SSH (Secure Shell)", "a": "Secure remote login protocol" },
+            { "q": "Telnet", "a": "Unencrypted protocol for remote login" },
+            {
+                "q": "SMTP (Simple Mail Transfer Protocol)",
+                "a": "Protocol for sending emails"
+            },
+            {
+                "q": "POP3 (Post Office Protocol version 3)",
+                "a": "Retrieves emails from a server"
+            },
+            {
+                "q": "IMAP (Internet Message Access Protocol)",
+                "a": "Accesses and manages email on the server"
+            },
+            { "q": "Ping", "a": "Tests network reachability" },
+            {
+                "q": "Traceroute",
+                "a": "Shows the path packets take to a destination"
+            },
+            {
+                "q": "Bandwidth",
+                "a": "Maximum data transfer rate of a network"
+            },
+            { "q": "Latency", "a": "Time delay in data communication" },
+            { "q": "Throughput", "a": "Actual data transfer rate" },
+            {
+                "q": "Collision domain",
+                "a": "Area where packet collisions can occur"
+            },
+            {
+                "q": "Broadcast domain",
+                "a": "Area where a broadcast frame is forwarded"
+            },
+            {
+                "q": "OSI model (Open Systems Interconnection model)",
+                "a": "Seven-layer model for network communication"
+            },
+            {
+                "q": "TCP/IP model (Transmission Control Protocol/Internet Protocol model)",
+                "a": "Four-layer model for internet communication"
+            },
+            {
+                "q": "Application layer",
+                "a": "Handles network services to applications"
+            },
+            { "q": "Presentation layer", "a": "Formats and encrypts data" },
+            {
+                "q": "Session layer",
+                "a": "Manages sessions between applications"
+            },
+            {
+                "q": "Transport layer",
+                "a": "Provides reliable or unreliable delivery"
+            },
+            { "q": "Network layer", "a": "Handles routing and addressing" },
+            {
+                "q": "Data link layer",
+                "a": "Manages node-to-node data transfer"
+            },
+            {
+                "q": "Physical layer",
+                "a": "Transmits raw bits over the medium"
+            },
+            {
+                "q": "Wired network",
+                "a": "Network using cables for connection"
+            },
+            { "q": "Wireless network", "a": "Network using radio signals" },
+            {
+                "q": "SSID (Service Set Identifier)",
+                "a": "Network name for a wireless network"
+            },
+            {
+                "q": "BGP (Border Gateway Protocol)",
+                "a": "Routing protocol between large networks"
+            },
+            {
+                "q": "OSPF (Open Shortest Path First)",
+                "a": "Routing protocol within a network"
+            },
+            {
+                "q": "RIP (Routing Information Protocol)",
+                "a": "Simple distance-vector routing protocol"
+            },
+            {
+                "q": "Load balancing",
+                "a": "Distributes traffic across multiple servers"
+            },
+            {
+                "q": "Proxy server",
+                "a": "Acts as an intermediary between client and server"
+            },
+            {
+                "q": "NAT traversal",
+                "a": "Techniques to pass through NAT devices"
+            },
+            { "q": "Multicast", "a": "One-to-many network communication" },
+            { "q": "Unicast", "a": "One-to-one network communication" },
+            { "q": "Broadcast", "a": "One-to-all communication in a network" },
+            { "q": "ARP cache", "a": "Stores IP-to-MAC address mappings" },
+            { "q": "DHCP lease", "a": "Temporary assignment of an IP address" },
+            {
+                "q": "VLAN (Virtual Local Area Network)",
+                "a": "Virtual network segments within a switch"
+            },
+            {
+                "q": "MPLS (Multiprotocol Label Switching)",
+                "a": "Fast packet forwarding using labels"
+            },
+            {
+                "q": "QoS (Quality of Service)",
+                "a": "Manages network traffic priorities"
+            },
+            {
+                "q": "IPsec (Internet Protocol Security)",
+                "a": "Encrypts IP traffic for secure communication"
+            },
+            {
+                "q": "Tunneling",
+                "a": "Encapsulating one protocol inside another"
+            },
+            {
+                "q": "IPv4 (Internet Protocol version 4)",
+                "a": "32-bit addressing system for the internet"
+            },
+            {
+                "q": "IPv6 (Internet Protocol version 6)",
+                "a": "128-bit addressing system to replace IPv4"
+            },
+            {
+                "q": "CIDR (Classless Inter-Domain Routing)",
+                "a": "IP address allocation method without classes"
+            },
+            {
+                "q": "Private IP address",
+                "a": "IP address used in internal networks"
+            },
+            { "q": "Public IP address", "a": "Globally routable IP address" },
+            {
+                "q": "Loopback address",
+                "a": "127.0.0.1, tests internal network stack"
+            },
+            {
+                "q": "Default gateway",
+                "a": "Device that routes traffic to outside networks"
+            },
+            {
+                "q": "DNS resolution",
+                "a": "Translating domain names to IP addresses"
+            },
+            {
+                "q": "Reverse DNS lookup",
+                "a": "Translating IP addresses to domain names"
+            },
+            { "q": "Dynamic IP", "a": "IP address that changes over time" },
+            { "q": "Static IP", "a": "IP address that does not change" },
+            {
+                "q": "IP spoofing",
+                "a": "Faking an IP address to hide identity"
+            },
+            {
+                "q": "SYN flood attack (Synchronize flood attack)",
+                "a": "Denial of service by overwhelming with SYN requests"
+            },
+            {
+                "q": "DDoS (Distributed Denial of Service)",
+                "a": "Distributed attack to overwhelm a service"
+            },
+            {
+                "q": "Port forwarding",
+                "a": "Redirects incoming traffic to a specific device"
+            },
+            {
+                "q": "NAT overload (Network Address Translation overload)",
+                "a": "Many private IPs share a single public IP"
+            },
+            {
+                "q": "ISP (Internet Service Provider)",
+                "a": "Company providing internet access"
+            },
+            {
+                "q": "Content Delivery Network (CDN)",
+                "a": "Distributes content closer to users"
+            },
+            {
+                "q": "Peer-to-peer network",
+                "a": "Network without central servers"
+            },
+            {
+                "q": "Client-server model",
+                "a": "Network model with centralized servers"
+            },
+            {
+                "q": "Network topology",
+                "a": "Physical or logical arrangement of a network"
+            },
+            { "q": "Star topology", "a": "All nodes connect to a central hub" },
+            {
+                "q": "Mesh topology",
+                "a": "Every node connects to every other node"
             }
         ]
     },
@@ -166,7 +786,7 @@
             }
         ]
     },
-    "IN3050-supervised": {
+    "IN3050-supervised ": {
         "title": "IN3050 Supervised Learning 🧠",
         "description": "Flashcards med supervised begreper",
         "credit": "",
