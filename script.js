@@ -17,9 +17,29 @@ let showlist = false;
 let answer = document.getElementById("answer");
 let questionContainer = document.getElementById("question-container");
 
+function resolveCombinedQuestions(data) {
+    for (const key in data) {
+        const collection = data[key];
+        if (Array.isArray(collection.combine)) {
+            let combined = [];
+            collection.combine.forEach(ref => {
+                if (data[ref] && Array.isArray(data[ref].questions)) {
+                    combined = combined.concat(data[ref].questions);
+                }
+            });
+            // Optionally, also include this collection's own questions
+            if (Array.isArray(collection.questions) && collection.questions.length > 0) {
+                combined = collection.questions.concat(combined);
+            }
+            collection.questions = combined;
+        }
+    }
+}
+
 async function fetchCollections() {
     const response = await fetch("data.json");
     data = await response.json();
+    resolveCombinedQuestions(data);
     console.log(data);
     const collectionsDiv = document.getElementById("collections");
     for (const collectionName in data) {
