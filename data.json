@@ -790,6 +790,13 @@
             }
         ]
     },
+    "IN2140-all": {
+        "title": "IN2140 All 📕",
+        "description": "Flashcards med begreper fra hele IN2140 pensum",
+        "credit": "",
+        "questions": [],
+        "combine": ["IN2140-os", "IN2140-network"]
+    },
     "IN3050-ea": {
         "title": "IN3050 EA 🧬",
         "description": "Flashcards med EA begreper",
@@ -1216,7 +1223,7 @@
         ]
     },
     "IN3050-RL": {
-        "title": "IN3050 RL",
+        "title": "IN3050 RL 🐕",
         "description": "Flashcards med RL begreper",
         "credit": "Ka",
         "questions": [
@@ -1303,31 +1310,11 @@
             {
                 "q": "Entropy regularization",
                 "a": "Encourages exploration by adding a term to the objective that favors more stochastic policies."
-            },
-            {
-                "q": "Applications: Game playing",
-                "a": "RL has achieved superhuman performance in games like Atari and Go."
-            },
-            {
-                "q": "Applications: Robotics",
-                "a": "RL helps robots learn tasks through trial and error in dynamic environments."
-            },
-            {
-                "q": "Applications: Autonomous vehicles",
-                "a": "Used for path planning, decision making, and control in self-driving systems."
-            },
-            {
-                "q": "Applications: Recommender systems",
-                "a": "RL helps personalize recommendations based on user feedback over time."
-            },
-            {
-                "q": "Applications: Finance",
-                "a": "RL is applied to portfolio management, trading strategies, and risk assessment."
             }
         ]
     },
     "IN3050-ethics-history": {
-        "title": "IN3050 Ethics and History",
+        "title": "IN3050 Ethics and History ♟️",
         "description": "Flashcards med AI Ethics and History begreper",
         "credit": "Ka",
         "questions": [
@@ -1338,7 +1325,7 @@
         ]
     },
     "IN3050-all": {
-        "title": "IN3050 All",
+        "title": "IN3050 All 📗",
         "description": "Flashcards med IN1030 begreper",
         "credit": "",
         "questions": [],
