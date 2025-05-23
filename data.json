@@ -222,7 +222,7 @@
                 "a": "A memory region for dynamically allocated memory"
             },
             {
-                "q": "Frame",
+                "q": "Frame (in memory)",
                 "a": "A fixed-size block of physical memory used in paging"
             },
             {
@@ -395,14 +395,6 @@
                 "a": "Multiple queues with different priority levels"
             },
             {
-                "q": "Multilevel Feedback Queue Scheduling",
-                "a": "Processes can move between queues based on behavior and requirements"
-            },
-            {
-                "q": "Highest Response Ratio Next (HRRN)",
-                "a": "Scheduling based on highest response ratio to minimize waiting time"
-            },
-            {
                 "q": "Lottery Scheduling",
                 "a": "Processes are given lottery tickets for CPU time allocation"
             },
@@ -486,6 +478,10 @@
                 "a": "A unique identifier for a device on a network"
             },
             {
+                "q": "(network) node",
+                "a": "A common name to refer to both end systems and intermediate systems"
+            },
+            {
                 "q": "MAC address (Media Access Control address)",
                 "a": "Hardware address that identifies a network interface"
             },
@@ -510,7 +506,10 @@
                 "a": "Connects different networks and translates protocols"
             },
             { "q": "Packet", "a": "A small unit of data sent over a network" },
-            { "q": "Frame", "a": "Data packet at the Data Link layer" },
+            {
+                "q": "Frame (in networks)",
+                "a": "Data packet at the Data Link layer"
+            },
             {
                 "q": "Port number",
                 "a": "Identifies specific processes or services on a device"
@@ -629,7 +628,7 @@
             { "q": "Network layer", "a": "Handles routing and addressing" },
             {
                 "q": "Data link layer",
-                "a": "Manages node-to-node data transfer"
+                "a": "Handles reliable data transfer between physically connected devices"
             },
             {
                 "q": "Physical layer",
@@ -772,38 +771,568 @@
             {
                 "q": "Mesh topology",
                 "a": "Every node connects to every other node"
+            },
+            {
+                "q": "DVR (distance vector routing)",
+                "a": "routing protocol where routers send their estimated distance to all other routers in the network to their direction neighbours"
+            },
+            {
+                "q": "LSR (link state routing)",
+                "a": "routing protocol where routers send their estimated distance to the direct neighbours to all routers in the network"
+            },
+            {
+                "q": "Sink Tree",
+                "a": "reference for optimal routes towards one single network node"
+            },
+            {
+                "q": "Netmask",
+                "a": "bit pattern that divide the bits of a network address into their network part and their host part"
             }
         ]
     },
     "IN3050-ea": {
-        "title": "IN3050 Evolutionary Algorithms 🧬",
+        "title": "IN3050 EA 🧬",
         "description": "Flashcards med EA begreper",
-        "credit": "",
+        "credit": "Ka",
         "questions": [
             {
-                "q": "TODO",
-                "a": ""
+                "q": "Search space / State space",
+                "a": "All possible configurations or solutions that an algorithm can explore."
+            },
+            {
+                "q": "Fitness function",
+                "a": "Evaluates how good a solution is in optimization or evolutionary algorithms."
+            },
+            {
+                "q": "Greedy algorithm",
+                "a": "Chooses the best immediate option without considering long-term consequences."
+            },
+            {
+                "q": "Local optimum / Global optimum",
+                "a": "Local: Best solution in a small region; Global: Best solution overall in the space."
+            },
+            {
+                "q": "Exploration vs. exploitation",
+                "a": "Exploration: Trying new areas; Exploitation: Using known good areas to improve solutions."
+            },
+            {
+                "q": "Hill Climbing",
+                "a": "Iterative search that moves to neighboring states with better fitness until a peak is reached."
+            },
+            {
+                "q": "Simulated Annealing",
+                "a": "Search algorithm that allows occasional worse moves to escape local optima, inspired by annealing in metallurgy."
+            },
+            {
+                "q": "Gradient Descent (GD)",
+                "a": "Optimization method that updates parameters in the direction of the negative gradient to minimize loss."
+            },
+            {
+                "q": "Stochastic Gradient Descent (SGD)",
+                "a": "Like GD but updates parameters using a random mini-batch, adding noise for better convergence."
+            },
+            {
+                "q": "Stochastic",
+                "a": "Involves randomness; results may vary per run (e.g., SGD, evolutionary algorithms)."
+            },
+            {
+                "q": "Deterministic",
+                "a": "No randomness; same inputs always lead to same outputs (e.g., basic gradient descent)."
+            },
+            {
+                "q": "Learning rate",
+                "a": "Controls the step size during optimization; too high = overshoot, too low = slow learning."
+            },
+            {
+                "q": "Convergence",
+                "a": "The point where the optimization algorithm stabilizes or finds an optimal solution."
+            },
+            {
+                "q": "Population",
+                "a": "A group of candidate solutions in an evolutionary algorithm."
+            },
+            {
+                "q": "Individual / Chromosome",
+                "a": "A single candidate solution in the population."
+            },
+            {
+                "q": "Genotype / Phenotype",
+                "a": "Genotype: Encoded representation of a solution; Phenotype: Actual behavior or output it produces."
+            },
+            {
+                "q": "Allele",
+                "a": "A single value at a gene position in a chromosome."
+            },
+            {
+                "q": "Selection: Tournament",
+                "a": "Selects best individuals from randomly chosen groups."
+            },
+            {
+                "q": "Selection: Ranked",
+                "a": "Ranks individuals by fitness and selects probabilistically based on rank."
+            },
+            {
+                "q": "Selection: Roulette",
+                "a": "Probability of selection is proportional to fitness; like spinning a weighted wheel."
+            },
+            {
+                "q": "Selection: Crowding",
+                "a": "Reduces selection pressure by replacing similar individuals to preserve diversity."
+            },
+            {
+                "q": "Selection: Elitism",
+                "a": "Automatically carries the best individuals to the next generation."
+            },
+            {
+                "q": "1-point crossover",
+                "a": "Swaps tails of parents at one random crossover point."
+            },
+            {
+                "q": "N-point crossover",
+                "a": "Swaps segments of parents at multiple crossover points."
+            },
+            {
+                "q": "Uniform crossover",
+                "a": "Each gene is randomly chosen from one of the parents with equal probability."
+            },
+            {
+                "q": "Intermediate (arithmetic) crossover",
+                "a": "Blends parent values using weighted averages per allele."
+            },
+            {
+                "q": "Discrete crossover",
+                "a": "Chooses each gene from one of the parents without averaging."
+            },
+            {
+                "q": "PMX",
+                "a": "Partially Mapped Crossover - used for permutations; preserves absolute positions."
+            },
+            {
+                "q": "Cycle crossover",
+                "a": "Creates offspring by alternating cycles from both parents to preserve position info."
+            },
+            {
+                "q": "Order crossover",
+                "a": "Preserves relative order of genes from parents in offspring."
+            },
+            {
+                "q": "Edge crossover",
+                "a": "Preserves edge relationships between genes in parent solutions."
+            },
+            {
+                "q": "Bit Flip Mutation",
+                "a": "Flips bits (0 to 1 or vice versa) with a small probability."
+            },
+            {
+                "q": "Uniform Mutation",
+                "a": "Each gene is replaced by a random value uniformly sampled from its domain."
+            },
+            {
+                "q": "Selection Pressure",
+                "a": "Degree to which fitter individuals are favored; too high can lead to premature convergence."
+            },
+            {
+                "q": "Genetic Algorithm (GA)",
+                "a": "An EA where solutions evolve using selection, crossover, and mutation over generations."
+            },
+            {
+                "q": "Genetic Programming (GP)",
+                "a": "Uses EA to evolve computer programs or symbolic expressions, often as trees."
+            },
+            {
+                "q": "Diversity preservation",
+                "a": "Maintains variation in the population to avoid premature convergence."
+            },
+            {
+                "q": "Island crossover",
+                "a": "Population is split into subpopulations (islands) that occasionally exchange individuals."
+            },
+            {
+                "q": "Speciation",
+                "a": "Divides population into species based on similarity to maintain diversity."
+            },
+            {
+                "q": "Shared fitness",
+                "a": "Reduces fitness of similar individuals to encourage diverse solutions."
+            },
+            {
+                "q": "Premature convergence",
+                "a": "When the population becomes too similar too early, potentially missing the global optimum."
+            },
+            {
+                "q": "Multi-objective optimization",
+                "a": "Optimization involving more than one conflicting objective, e.g., speed vs. accuracy."
             }
         ]
     },
     "IN3050-supervised ": {
-        "title": "IN3050 Supervised Learning 🧠",
+        "title": "IN3050 Supervised 🧠",
         "description": "Flashcards med supervised begreper",
-        "credit": "",
+        "credit": "Ka",
         "questions": [
             {
-                "q": "TODO",
-                "a": ""
+                "q": "Labeled data",
+                "a": "Data where each example is paired with an output label, used to train supervised models"
+            },
+            {
+                "q": "Training set",
+                "a": "Subset of labeled data used to train a model"
+            },
+            {
+                "q": "Test set",
+                "a": "Subset of labeled data used to evaluate a model’s performance"
+            },
+            {
+                "q": "Validation set",
+                "a": "Subset of data used to fine-tune model hyperparameters during training"
+            },
+            {
+                "q": "Generalization",
+                "a": "Model’s ability to perform well on unseen data"
+            },
+            {
+                "q": "Underfitting",
+                "a": "Model is too simple to capture the underlying patterns in the data"
+            },
+            {
+                "q": "Overfitting",
+                "a": "Model is too complex and captures noise in the training data"
+            },
+            {
+                "q": "Cross-validation",
+                "a": "Technique for assessing model performance by training and testing on different data splits"
+            },
+            {
+                "q": "Decision boundary",
+                "a": "The surface that separates different predicted classes in the input space"
+            },
+            {
+                "q": "Linear Regression",
+                "a": "Predicts a continuous output using a linear relationship between input features"
+            },
+            {
+                "q": "Logistic Regression",
+                "a": "Predicts probabilities for binary classification using the logistic function"
+            },
+            {
+                "q": "Decision Trees",
+                "a": "Tree-structured models that split data based on feature values to make predictions"
+            },
+            {
+                "q": "Support Vector Machines (SVM)",
+                "a": "Classifier that finds the optimal hyperplane separating different classes"
+            },
+            {
+                "q": "k-Nearest Neighbors (k-NN)",
+                "a": "Classifies instances based on the most common label among the nearest neighbors"
+            },
+            {
+                "q": "Accuracy",
+                "a": "Proportion of correct predictions out of total predictions made"
+            },
+            {
+                "q": "Precision",
+                "a": "Proportion of true positives out of all predicted positives"
+            },
+            {
+                "q": "Recall",
+                "a": "Proportion of true positives out of all actual positives"
+            },
+            {
+                "q": "F1-score",
+                "a": "Harmonic mean of precision and recall; balances both in one metric"
+            },
+            {
+                "q": "Confusion matrix",
+                "a": "Matrix that shows the counts of true positives, false positives, true negatives, and false negatives"
+            },
+            {
+                "q": "Covariance matrix",
+                "a": "Matrix capturing the covariances between each pair of features"
+            },
+            {
+                "q": "Loss functions",
+                "a": "Functions used to measure the error between predicted and actual values"
+            },
+            {
+                "q": "MSE",
+                "a": "Mean Squared Error - Average of squared differences between predictions and actual values"
+            },
+            {
+                "q": "Cross-Entropy Loss",
+                "a": "Loss function that penalizes incorrect, confident predictions — especially effective for classification tasks"
+            },
+            {
+                "q": "Binary Cross-Entropy",
+                "a": "L = -[y * log(p) + (1 - y) * log(1 - p)] — used for binary classification"
+            },
+            {
+                "q": "Multiclass Cross-Entropy",
+                "a": "L = -sum over classes of (y_i * log(p_i)) — used for multiclass classification"
             }
         ]
     },
     "IN3050-unsupervised": {
-        "title": "IN3050 Unsupervised Learning 🧠",
+        "title": "IN3050 Unsupervised 🧠",
         "description": "Flashcards med unsupervised begreper",
         "credit": "",
         "questions": [
             {
-                "q": "TODO",
+                "q": "Neuron / Node",
+                "a": "Basic unit in a neural network that receives input, applies weights and an activation function, and produces output."
+            },
+            {
+                "q": "Weights / Biases",
+                "a": "Weights determine importance of inputs; biases shift the activation function for better fitting."
+            },
+            {
+                "q": "Activation functions",
+                "a": "Functions that introduce non-linearity into the model, allowing networks to learn complex patterns."
+            },
+            {
+                "q": "Sigmoid",
+                "a": "Activation function that maps input to a value between 0 and 1; useful for binary classification."
+            },
+            {
+                "q": "ReLU",
+                "a": "Rectified Linear Unit - returns 0 if input is negative, otherwise returns input. Efficient and popular."
+            },
+            {
+                "q": "Softmax",
+                "a": "Turns raw scores into probabilities that sum to 1; used in the final layer for multiclass classification."
+            },
+            {
+                "q": "Layers: Input / Hidden / Output",
+                "a": "Input layer receives data; hidden layers learn features; output layer produces final prediction."
+            },
+            {
+                "q": "Forward pass / Backpropagation",
+                "a": "Forward pass calculates outputs; backpropagation updates weights based on error gradients."
+            },
+            {
+                "q": "Loss function",
+                "a": "Quantifies difference between predicted and true values; guides learning."
+            },
+            {
+                "q": "Epoch / Batch / Mini-batch",
+                "a": "Epoch = full pass over data; batch = whole dataset; mini-batch = small subset used per update."
+            },
+            {
+                "q": "Feedforward NN",
+                "a": "Neural network where connections don't form cycles; data moves one way, input to output."
+            },
+            {
+                "q": "Convolutional Neural Network (CNN)",
+                "a": "NN type for image and spatial data; uses convolution layers to extract local features."
+            },
+            {
+                "q": "Recurrent Neural Network (RNN)",
+                "a": "NN for sequential data; maintains state across time steps."
+            },
+            {
+                "q": "Long Short-Term Memory (LSTM)",
+                "a": "Special RNN that can learn long-term dependencies using memory cells."
+            },
+            {
+                "q": "Transformer",
+                "a": "Attention-based architecture for sequences; highly parallelizable and powerful for NLP tasks."
+            },
+            {
+                "q": "Autoencoder",
+                "a": "NN that learns to compress and then reconstruct input data; used for dimensionality reduction."
+            },
+            {
+                "q": "Learning rate",
+                "a": "Controls the size of weight updates during training; too high = unstable, too low = slow."
+            },
+            {
+                "q": "Early stopping",
+                "a": "Halts training when performance on validation set stops improving, to avoid overfitting."
+            },
+            {
+                "q": "Weight initialization",
+                "a": "How weights are set before training; impacts convergence and learning speed."
+            },
+            {
+                "q": "Unlabeled data",
+                "a": "Data without target labels; used in unsupervised learning to find patterns or structure."
+            },
+            {
+                "q": "Clustering",
+                "a": "Grouping similar data points together without predefined labels."
+            },
+            {
+                "q": "Dimensionality reduction",
+                "a": "Reducing number of input features while preserving important structure or variance."
+            },
+            {
+                "q": "Outliers",
+                "a": "Data points that differ significantly from others; can skew models or indicate anomalies."
+            },
+            {
+                "q": "k-Means",
+                "a": "Clustering algorithm that partitions data into k groups by minimizing within-cluster variance."
+            },
+            {
+                "q": "Hierarchical clustering",
+                "a": "Builds a tree of clusters by progressively merging or splitting them based on distance."
+            },
+            {
+                "q": "Linkage methods",
+                "a": "Rules for computing distance between clusters (single, complete, average, ward)."
+            },
+            {
+                "q": "Single linkage",
+                "a": "Distance = shortest distance between any two points from two clusters."
+            },
+            {
+                "q": "Complete linkage",
+                "a": "Distance = longest distance between any two points from two clusters."
+            },
+            {
+                "q": "Average linkage",
+                "a": "Distance = average distance between all pairs from two clusters."
+            },
+            {
+                "q": "Ward linkage",
+                "a": "Merges clusters to minimize increase in total within-cluster variance."
+            },
+            {
+                "q": "Principal Component Analysis (PCA)",
+                "a": "Reduces dimensionality by projecting data onto directions of maximum variance."
+            },
+            {
+                "q": "Autoencoder (unsupervised variant)",
+                "a": "Learns compressed representations of input data without labels, then reconstructs it."
+            },
+            {
+                "q": "Denoising Autoencoder",
+                "a": "Autoencoder trained to reconstruct original input from noisy versions; improves robustness."
+            },
+            {
+                "q": "Sparse Autoencoder",
+                "a": "Autoencoder with constraint that forces many hidden units to be inactive; learns distinct features."
+            }
+        ]
+    },
+    "IN3050-RL": {
+        "title": "IN3050 RL",
+        "description": "Flashcards med RL begreper",
+        "credit": "Ka",
+        "questions": [
+            {
+                "q": "Agent",
+                "a": "The decision-maker in reinforcement learning, e.g., a robot, AI, or software program."
+            },
+            {
+                "q": "Environment",
+                "a": "Everything the agent interacts with or operates within."
+            },
+            {
+                "q": "State",
+                "a": "A snapshot or representation of the environment at a specific point in time."
+            },
+            {
+                "q": "Action",
+                "a": "What the agent chooses to do in a given state."
+            },
+            {
+                "q": "Reward",
+                "a": "A scalar signal from the environment telling the agent how good or bad its last action was."
+            },
+            {
+                "q": "Policy",
+                "a": "The agent’s strategy: a mapping from states to actions (π(s) → a)."
+            },
+            {
+                "q": "Episode",
+                "a": "A full sequence of interactions from the start state to a terminal state."
+            },
+            {
+                "q": "Value Function",
+                "a": "Estimates how good a state or action is in terms of expected future rewards."
+            },
+            {
+                "q": "State-value function: V(s)",
+                "a": "The expected return (total future reward) starting from state s and following the policy."
+            },
+            {
+                "q": "Action-value function: Q(s, a)",
+                "a": "The expected return starting from state s, taking action a, and then following the policy."
+            },
+            {
+                "q": "Total future reward",
+                "a": "The cumulative reward an agent expects to receive from a given point onward."
+            },
+            {
+                "q": "Discount Factor γ",
+                "a": "A number between 0 and 1 that reduces the value of future rewards to prioritize immediate ones."
+            },
+            {
+                "q": "Q-Learning",
+                "a": "A value-based RL algorithm that learns the optimal action-value function off-policy."
+            },
+            {
+                "q": "SARSA",
+                "a": "An on-policy RL algorithm that updates Q-values based on the actual action taken (State-Action-Reward-State-Action)."
+            },
+            {
+                "q": "Deep Q-Network (DQN)",
+                "a": "An extension of Q-learning using deep neural networks to estimate Q-values."
+            },
+            {
+                "q": "Policy Gradient",
+                "a": "A policy-based RL method that directly adjusts the policy parameters to maximize expected reward."
+            },
+            {
+                "q": "Actor-Critic",
+                "a": "Combines policy (actor) and value function (critic) for efficient learning."
+            },
+            {
+                "q": "ϵ-greedy",
+                "a": "An exploration strategy where the agent chooses a random action with probability ϵ and the best known action with 1−ϵ."
+            },
+            {
+                "q": "Boltzmann exploration",
+                "a": "Selects actions probabilistically based on their estimated values using a softmax function."
+            },
+            {
+                "q": "Upper Confidence Bound (UCB)",
+                "a": "Selects actions with the highest potential value considering both average reward and uncertainty."
+            },
+            {
+                "q": "Entropy regularization",
+                "a": "Encourages exploration by adding a term to the objective that favors more stochastic policies."
+            },
+            {
+                "q": "Applications: Game playing",
+                "a": "RL has achieved superhuman performance in games like Atari and Go."
+            },
+            {
+                "q": "Applications: Robotics",
+                "a": "RL helps robots learn tasks through trial and error in dynamic environments."
+            },
+            {
+                "q": "Applications: Autonomous vehicles",
+                "a": "Used for path planning, decision making, and control in self-driving systems."
+            },
+            {
+                "q": "Applications: Recommender systems",
+                "a": "RL helps personalize recommendations based on user feedback over time."
+            },
+            {
+                "q": "Applications: Finance",
+                "a": "RL is applied to portfolio management, trading strategies, and risk assessment."
+            }
+        ]
+    },
+    "IN3050-ethics-history": {
+        "title": "IN3050 Ethics and History",
+        "description": "Flashcards med AI Ethics and History begreper",
+        "credit": "Ka",
+        "questions": [
+            {
+                "q": "Todo",
                 "a": ""
             }
         ]
@@ -836,6 +1365,22 @@
             {
                 "q": "iteration",
                 "a": "A single development cycle in an agile methodology"
+            }
+        ]
+    },
+    "sample-1": {
+        "title": "Sample",
+        "description": "Flashcards med INSERT TITLE begreper",
+        "credit": "Hvem som lagde begrepene",
+        "questions": [
+            {
+                "q": "question",
+                "a": "answer"
+            },
+            "flashcard uten svar",
+            {
+                "q": "abc",
+                "a": "123"
             }
         ]
     }
