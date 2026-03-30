@@ -1,11 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
     <head>
         <title>Flashcards</title>
         <link rel="stylesheet" type="text/css" href="styles.css" />
         <link rel="icon" href="../seedling.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charset="UTF-8" />
+        <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
     </head>
 
     <body>
@@ -16,22 +17,25 @@
             <div id="collections"></div>
         </main>
         <main id="flashcards">
-            <h1 style="font-size: 30px" id="title"></h1>
+            <div id="flashcards-header">
+                <button id="back-to-menu" class="menu-button"><i data-lucide="arrow-left"></i></button>
+                <h1 style="font-size: 30px" id="title"></h1>
+            </div>
             <div id="question-container">
                 <p id="question"></p>
                 <p id="answer"></p>
                 <p id="number"></p>
             </div>
             <div id="buttons-container">
-                <button id="back-to-menu" class="menu-button">📚</button>
-                <button id="previous" class="menu-button">⬅️</button>
-                <button id="next" class="menu-button">➡️</button>
-                <button id="shuffle-toggle" class="menu-button">🔀</button>
-                <button id="list-toggle" class="menu-button">📄</button>
+                <button id="previous" class="menu-button"><i data-lucide="chevron-left"></i></button>
+                <button id="next" class="menu-button"><i data-lucide="chevron-right"></i></button>
+                <button id="shuffle-toggle" class="menu-button"><i data-lucide="shuffle"></i></button>
+                <button id="list-toggle" class="menu-button"><i data-lucide="list"></i></button>
             </div>
             <ol id="list-container"></ol>
         </main>
 
         <script src="script.js"></script>
+        <script>lucide.createIcons();</script>
     </body>
 </html>

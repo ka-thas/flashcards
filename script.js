@@ -131,7 +131,7 @@ listToggle.addEventListener("click", () => {
         }, 100);
     } else {
         listContainer.style.display = "none";
-        listToggle.style.backgroundColor = "#f1f1f1";
+        listToggle.style.backgroundColor = "#aca4";
         window.scrollTo({ top: 0, behavior: "smooth" });
     }
 });
@@ -146,9 +146,19 @@ questionContainer.addEventListener("click", () => {
 function loadList() {
     const listContainer = document.getElementById("list-container");
     listContainer.innerHTML = "";
-    questions.forEach((q) => {
+    questions.forEach((q, i) => {
         const listItem = document.createElement("li");
         listItem.textContent = typeof q === "string" ? q : q.q;
+        listItem.style.cursor = "pointer";
+        listItem.addEventListener("click", () => {
+            previousQuestions.push(currentQuestion);
+            currentQuestion = i;
+            displayCurrentQuestion();
+            listContainer.style.display = "none";
+            listToggle.style.backgroundColor = "#f1f1f1";
+            showlist = false;
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
         listContainer.appendChild(listItem);
     });
 }

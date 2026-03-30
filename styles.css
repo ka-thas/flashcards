@@ -1,21 +1,23 @@
-:root {
-    --background-color: #0f6e5c00;
+:root{
+   --text: #060807;
+--background: #f3f8f5;
+--primary: #44c27b;
+--secondary: #9dd0b3;
+--accent: #76c498;
+
+    --gray: #fff;
 }
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: urbanist, sans-serif;
     font-size: larger;
-    background: linear-gradient(
-        to right,
-        rgb(46, 71, 63) 0%,
-        rgb(47, 77, 53) 100%
-    );
     background-size: 100% 200px;
     background-repeat: repeat-y;
-    color: #fff;
-    background-color: #222;
+    color: var(--text);
+    background-color: var(--background);
 }
 main {
     display: flex;
@@ -31,12 +33,11 @@ html {
 }
 h1 {
     font-size: 60px;
-    background-color: var(--background-color);
     margin: 0;
 }
 
 .gradient-text {
-    background: linear-gradient(100deg, #00ff80, #efff78);
+    background: linear-gradient(100deg, var(--primary), var(--secondary));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -45,24 +46,33 @@ h1 {
 button {
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
-    color: #151;
+    color: var(--text);
     padding: 10px 20px;
     border: none;
     border-radius: 50px;
-    background-color: #f1f1f1;
+    background-color: var(--gray);
     cursor: pointer;
 }
 .menu-button {
     padding: 9px 15px;
-    background-color: #aca4;
+    background-color: var(--secondary);
     font-size: 30px;
     border-radius: 100px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.menu-button svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--text);
 }
 #collection-button {
     padding: 4px 16px;
     font-size: 20px;
 }
 button:hover {
+    background-color: var(--secondary);
     transform: scale(1.05);
     transition: transform 0.1s ease-in-out;
 }
@@ -75,46 +85,61 @@ button:hover {
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     text-align: left;
-    color: #aca;
+    color: var(--accent);
     opacity: 0;
     transition: opacity 0.5s ease;
+}
+#flashcards {
+    display: none;
+    width: 100%;
+    align-items: stretch;
+}
+#flashcards-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
 }
 #question-container {
     height: 300px;
     border-radius: 20px;
     padding: 20px;
-    margin: 20px;
-    background-color: #f1f1f111;
-    border-top: 1px solid #dfda;
-    box-shadow: 0px 5px 5px #0202;
+    background-color: var(--gray);
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     cursor: pointer;
+    box-sizing: border-box;
 }
-#flashcards {
-    display: none;
+#buttons-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
 }
 #number {
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
-    color: #aca;
+    color: var(--accent);
+    align-self: flex-end;
 }
 #list-container {
     display: none;
     text-align: left;
-    padding: 20px;
-    margin: 20px;
-    background-color: #f1f1f111;
-    border-top: 1px solid #dfda;
-    box-shadow: 0px 5px 5px #0202;
+    padding: 20px 20px 20px 50px;
+    margin-top: 16px;
+    background-color: var(--gray);
     border-radius: 20px;
-    padding-left: 50px;
     scroll-margin-top: 20px;
+    box-sizing: border-box;
 }
 li {
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
-    color: #fff;
+    color: var(--text);
+    margin: 10px;
+}
+li:hover {
+    color: var(--accent);
+    cursor: pointer;
 }
