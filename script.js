@@ -1,3 +1,5 @@
+const cssVar = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+
 let question = document.getElementById("question");
 let next = document.getElementById("next");
 let previous = document.getElementById("previous");
@@ -115,9 +117,9 @@ backToMenu.addEventListener("click", () => {
 shuffleToggle.addEventListener("click", () => {
     shuffle = !shuffle;
     if (shuffle) {
-        shuffleToggle.style.backgroundColor = "#acaa";
+        shuffleToggle.style.backgroundColor = cssVar("--primary");
     } else {
-        shuffleToggle.style.backgroundColor = "#aca4";
+        shuffleToggle.style.backgroundColor = cssVar("--secondary");
     }
 });
 
@@ -125,13 +127,13 @@ listToggle.addEventListener("click", () => {
     showlist = !showlist;
     if (showlist) {
         listContainer.style.display = "block";
-        listToggle.style.backgroundColor = "#aca";
+        listToggle.style.backgroundColor = cssVar("--primary");
         setTimeout(() => {
             listContainer.scrollIntoView({ behavior: "smooth" });
         }, 100);
     } else {
         listContainer.style.display = "none";
-        listToggle.style.backgroundColor = "#aca4";
+        listToggle.style.backgroundColor = cssVar("--secondary");
         window.scrollTo({ top: 0, behavior: "smooth" });
     }
 });
@@ -155,7 +157,7 @@ function loadList() {
             currentQuestion = i;
             displayCurrentQuestion();
             listContainer.style.display = "none";
-            listToggle.style.backgroundColor = "#f1f1f1";
+            listToggle.style.backgroundColor = cssVar("--secondary");
             showlist = false;
             window.scrollTo({ top: 0, behavior: "smooth" });
         });
