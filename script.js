@@ -70,21 +70,17 @@ function loadCollection(name) {
 function displayCurrentQuestion() {
     const currentQ = questions[currentQuestion];
 
-    // Reset answer opacity instantly before changing content
-    answer.style.transition = "opacity 0s";
-    answer.style.opacity = "0";
+    answer.classList.remove("concealed");
+    answer.textContent = "";
 
-    // Small delay to ensure opacity is reset
     setTimeout(() => {
         if (typeof currentQ === "string") {
             question.textContent = currentQ;
-            answer.textContent = "";
         } else {
             question.textContent = currentQ.q;
             answer.textContent = currentQ.a;
+            answer.classList.add("concealed");
         }
-        // Restore transition for future clicks
-        answer.style.transition = "opacity 0.3s ease";
     }, 50);
 
     number.textContent = `${currentQuestion + 1} / ${questions.length}`;
@@ -141,7 +137,7 @@ listToggle.addEventListener("click", () => {
 questionContainer.addEventListener("click", () => {
     const currentQ = questions[currentQuestion];
     if (typeof currentQ === "object" && currentQ.a) {
-        answer.style.opacity = answer.style.opacity === "0" ? "1" : "0";
+        answer.classList.toggle("concealed");
     }
 });
 

@@ -1,11 +1,11 @@
 :root{
    --text: #060807;
---background: #f3f8f5;
---primary: #44c27b;
---secondary: #9dd0b3;
---accent: #76c498;
+    --background: #f3f8f5;
+    --primary: #44c27b;
+    --secondary: #9dd0b3;
+    --accent: #76c498;
 
-    --gray: #fff;
+    --gray: #ded;
 }
 
 body {
@@ -74,7 +74,7 @@ button {
 button:hover {
     background-color: var(--secondary);
     transform: scale(1.05);
-    transition: transform 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
 }
 #question {
     font-size: 30px;
@@ -86,8 +86,12 @@ button:hover {
     font-family: Arial, Helvetica, sans-serif;
     text-align: left;
     color: var(--accent);
-    opacity: 0;
-    transition: opacity 0.5s ease;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+#answer.concealed {
+    color: transparent;
+    text-shadow: 0 0 10px var(--accent);
+    user-select: none;
 }
 #flashcards {
     display: none;
