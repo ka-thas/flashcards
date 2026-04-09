@@ -3,6 +3,7 @@
         "title": "IN1160 ML 🐒",
         "description": "Flashcards med ML begreper. Har ingen formler for nå",
         "credit": "",
+        "google sheets": "https://docs.google.com/spreadsheets/d/e/2PACX-1vR4uqGhVGkXKpA7IvdDYC8hVtiwjvWw-3ldTlS6wFBMEUYa6EbtRLi0E53Oj5J3U-YVIhmAHhi2wRV7/pub?output=csv",
         "questions": [
             "Trekk og vektorrom",
             "Klassifikasjon",

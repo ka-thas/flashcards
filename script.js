@@ -54,15 +54,38 @@ async function fetchCollections() {
     }
 }
 
-function loadCollection(name) {
+async function loadCollection(name) {
+    const url = new URL(window.location);
+    url.searchParams.set("collection", name);
+    history.pushState({}, "", url);
     currentCollection = name;
     document.getElementById("main-menu").style.display = "none";
     document.getElementById("flashcards").style.display = "block";
     title.textContent = data[name].title;
-    questions = data[name].questions;
-    if (shuffle) {
-        currentQuestion = Math.floor(Math.random() * questions.length);
+
+    if (data[name]["google sheets"]) {
+        const csvUrl = data[name]["google sheets"];
+        await new Promise((resolve) => {
+            Papa.parse(csvUrl, {
+                download: true,
+                header: true,
+                skipEmptyLines: true,
+                complete(results) {
+                    questions = results.data.map((row) => {
+                        const keys = Object.keys(row);
+                        const q = row[keys[0]];
+                        const a = keys[1] ? row[keys[1]] : undefined;
+                        return a ? { q, a } : q;
+                    });
+                    resolve();
+                },
+            });
+        });
+    } else {
+        questions = data[name].questions;
     }
+
+    currentQuestion = shuffle ? Math.floor(Math.random() * questions.length) : 0;
     displayCurrentQuestion();
     loadList();
 }
@@ -108,6 +131,9 @@ backToMenu.addEventListener("click", () => {
     document.getElementById("main-menu").style.display = "block";
     document.getElementById("flashcards").style.display = "none";
     previousQuestions = [];
+    const url = new URL(window.location);
+    url.searchParams.delete("collection");
+    history.pushState({}, "", url);
 });
 
 shuffleToggle.addEventListener("click", () => {
@@ -161,4 +187,10 @@ function loadList() {
     });
 }
 
-fetchCollections();
+fetchCollections().then(() => {
+    const params = new URLSearchParams(window.location.search);
+    const col = params.get("collection");
+    if (col && data[col]) {
+        loadCollection(col);
+    }
+});
