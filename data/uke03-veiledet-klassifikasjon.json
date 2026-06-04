@@ -1,0 +1,63 @@
+{
+    "title": "Uke 03 Veiledet klassifikasjon 🏷️",
+    "description": "Veiledet læring og klassifikasjon, k-NN og evalueringsmål",
+    "credit": "Ka",
+    "questions": [
+        {
+            "q": "Veiledet læring",
+            "a": "Læring fra merket data (input-output-par) der modellen lærer en funksjon fra input til riktig output."
+        },
+        {
+            "q": "Klassifikasjon",
+            "a": "Veiledet oppgave der målet er å forutsi en diskret klasse/kategori (i motsetning til regresjon, som forutsier et tall)."
+        },
+        {
+            "q": "Binær klassifikasjon",
+            "a": "Klassifikasjon med kun to mulige klasser, f.eks. spam / ikke-spam."
+        },
+        {
+            "q": "Multiklasse-klassifikasjon",
+            "a": "Klassifikasjon med mer enn to klasser, f.eks. å kjenne igjen siffer 0–9."
+        },
+        {
+            "q": "Treningssett vs. testsett",
+            "a": "Treningssettet brukes til å lære modellen; testsettet brukes til å evaluere hvor godt den generaliserer til ukjent data."
+        },
+        {
+            "q": "k-Nærmeste nabo (k-NN)",
+            "a": "Klassifiserer et nytt punkt ut fra flertallsklassen blant de $k$ nærmeste naboene i trekkrommet.\nIngen egentlig «trening» — all jobb skjer ved prediksjon."
+        },
+        {
+            "q": "Valg av $k$ i k-NN",
+            "a": "Lav $k$ → følsom for støy (overtilpasning).\nHøy $k$ → glattere, men kan viske ut detaljer (undertilpasning)."
+        },
+        {
+            "q": "Beslutningsgrense",
+            "a": "Flaten i trekkrommet som skiller de ulike predikerte klassene fra hverandre."
+        },
+        {
+            "q": "Forvirringsmatrise",
+            "a": "Tabell som viser antall sanne positive (TP), falske positive (FP), sanne negative (TN) og falske negative (FN)."
+        },
+        {
+            "q": "Nøyaktighet (accuracy)",
+            "a": "$\\dfrac{TP + TN}{TP + TN + FP + FN}$ — andel korrekte prediksjoner.\nKan være misvisende ved ubalanserte klasser."
+        },
+        {
+            "q": "Presisjon (precision)",
+            "a": "$\\dfrac{TP}{TP + FP}$ — av alt modellen meldte som positivt, hvor mye var faktisk positivt?"
+        },
+        {
+            "q": "Sensitivitet (recall)",
+            "a": "$\\dfrac{TP}{TP + FN}$ — av alt som faktisk var positivt, hvor mye fanget modellen opp?"
+        },
+        {
+            "q": "F1-mål",
+            "a": "$F_1 = 2 \\cdot \\dfrac{\\text{presisjon} \\cdot \\text{sensitivitet}}{\\text{presisjon} + \\text{sensitivitet}}$ — det harmoniske gjennomsnittet; balanserer presisjon og recall."
+        },
+        {
+            "q": "Overtilpasning vs. undertilpasning",
+            "a": "Overtilpasning: modellen lærer støy i treningsdata og generaliserer dårlig.\nUndertilpasning: modellen er for enkel til å fange mønsteret."
+        }
+    ]
+}

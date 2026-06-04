@@ -1,0 +1,55 @@
+{
+    "title": "Uke 11 Forsterkende læring 🎮",
+    "description": "Reinforcement learning: agent, miljø, belønning og Q-læring",
+    "credit": "Ka",
+    "questions": [
+        {
+            "q": "Forsterkende læring (reinforcement learning)",
+            "a": "En agent lærer ved prøving og feiling: den utfører handlinger i et miljø og justerer atferden ut fra belønninger den får."
+        },
+        {
+            "q": "Agent og miljø",
+            "a": "Agenten er den lærende beslutningstakeren.\nMiljøet er alt agenten samhandler med og får tilstander og belønninger fra."
+        },
+        {
+            "q": "Tilstand, handling, belønning",
+            "a": "Tilstand: situasjonen agenten er i.\nHandling: hva den velger å gjøre.\nBelønning: tallverdi som sier hvor bra handlingen var."
+        },
+        {
+            "q": "Policy (strategi)",
+            "a": "Regelen som avgjør hvilken handling agenten velger i en gitt tilstand. Målet er å lære en policy som maksimerer belønning over tid."
+        },
+        {
+            "q": "Markov beslutningsprosess (MDP)",
+            "a": "Den matematiske rammen for RL: tilstander, handlinger, overgangssannsynligheter og belønninger, der fremtiden kun avhenger av nåtilstanden."
+        },
+        {
+            "q": "Fremtidig diskontert belønning",
+            "a": "$G_t = \\sum_{k=0}^{\\infty} \\gamma^k r_{t+k+1}$ — summen av fremtidige belønninger, der senere belønninger vektes lavere."
+        },
+        {
+            "q": "Diskonteringsfaktor $\\gamma$",
+            "a": "Et tall i $[0,1]$ som bestemmer hvor mye fremtidige belønninger teller.\nNær 0 → kortsiktig; nær 1 → langsiktig."
+        },
+        {
+            "q": "Q-verdi",
+            "a": "$Q(s,a)$ — forventet fremtidig diskontert belønning ved å ta handling $a$ i tilstand $s$ og deretter følge policyen."
+        },
+        {
+            "q": "Q-læring — oppdatering",
+            "a": "$Q(s,a) \\leftarrow Q(s,a) + \\alpha\\big[r + \\gamma \\max_{a'} Q(s',a') - Q(s,a)\\big]$ (off-policy)."
+        },
+        {
+            "q": "SARSA — oppdatering",
+            "a": "$Q(s,a) \\leftarrow Q(s,a) + \\alpha\\big[r + \\gamma Q(s',a') - Q(s,a)\\big]$ (on-policy) — bruker handlingen som faktisk ble valgt."
+        },
+        {
+            "q": "Utforskning vs. utnyttelse",
+            "a": "Utforskning: prøve nye handlinger for å lære mer.\nUtnyttelse: velge det beste man vet om. RL må balansere disse."
+        },
+        {
+            "q": "Epsilon-grådig",
+            "a": "Velg en tilfeldig handling med sannsynlighet $\\epsilon$ (utforskning), ellers $\\arg\\max_a Q(s,a)$ (utnyttelse)."
+        }
+    ]
+}

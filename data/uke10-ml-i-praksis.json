@@ -1,0 +1,55 @@
+{
+    "title": "Uke 10 ML i praksis 🛠️",
+    "description": "Dataforberedelse, evaluering og praktiske fallgruver",
+    "credit": "Ka",
+    "questions": [
+        {
+            "q": "ML-pipeline",
+            "a": "Hele kjeden fra rådata til ferdig modell: innsamling → preprosessering → trening → evaluering → utrulling."
+        },
+        {
+            "q": "Preprosessering",
+            "a": "Å rense og klargjøre data før trening: håndtere manglende verdier, kode kategorier, skalere trekk og fjerne uteliggere."
+        },
+        {
+            "q": "Manglende data",
+            "a": "Kan håndteres ved å fjerne rader/kolonner eller ved imputering (fylle inn med f.eks. gjennomsnitt, median eller en modell)."
+        },
+        {
+            "q": "One-hot encoding",
+            "a": "En kategori med $k$ verdier kodes som en binær vektor av lengde $k$ med én 1 og resten 0.\nF.eks. grønn $\\rightarrow (0, 1, 0)$."
+        },
+        {
+            "q": "Skalering — min-max",
+            "a": "$x' = \\dfrac{x - x_{\\min}}{x_{\\max} - x_{\\min}}$ — skalerer verdiene til intervallet $[0, 1]$."
+        },
+        {
+            "q": "Skalering — standardisering (z-score)",
+            "a": "$x' = \\dfrac{x - \\mu}{\\sigma}$ — gir trekkene gjennomsnitt 0 og standardavvik 1."
+        },
+        {
+            "q": "Trening / validering / test",
+            "a": "Trening: lære vektene.\nValidering: stille inn hyperparametere.\nTest: endelig, upartisk evaluering på ukjent data."
+        },
+        {
+            "q": "Parametere vs. hyperparametere",
+            "a": "Parametere (f.eks. vekter) læres av modellen.\nHyperparametere (f.eks. læringsrate, $k$, tredybde) settes av oss før trening."
+        },
+        {
+            "q": "Kryssvalidering",
+            "a": "Deler data i flere folder og trener/tester på ulike kombinasjoner for et mer robust mål på ytelsen."
+        },
+        {
+            "q": "Bias-varians-avveiingen",
+            "a": "Høy bias → undertilpasning (for enkel modell).\nHøy varians → overtilpasning (for kompleks modell). Målet er en god balanse."
+        },
+        {
+            "q": "Datalekkasje (data leakage)",
+            "a": "Når informasjon fra testdata sniker seg inn i treningen, slik at modellen ser kunstig bra ut. F.eks. å skalere før split."
+        },
+        {
+            "q": "Forklarbarhet (explainability)",
+            "a": "Evnen til å forstå hvorfor en modell gir et bestemt svar. Viktig for tillit, feilsøking og ansvar — spesielt i «black box»-modeller."
+        }
+    ]
+}

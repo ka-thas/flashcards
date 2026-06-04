@@ -1,5 +1,22 @@
 const cssVar = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 
+// Set text on an element and render any LaTeX math it contains.
+// Supports $...$ and \(...\) for inline, $$...$$ and \[...\] for display.
+function setMathText(element, text) {
+    element.textContent = text ?? "";
+    if (typeof renderMathInElement === "function") {
+        renderMathInElement(element, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "\\[", right: "\\]", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+            ],
+            throwOnError: false,
+        });
+    }
+}
+
 let question = document.getElementById("question");
 let next = document.getElementById("next");
 let previous = document.getElementById("previous");
@@ -40,7 +57,18 @@ function resolveCombinedQuestions(data) {
 
 async function fetchCollections() {
     const response = await fetch("data.json");
-    data = await response.json();
+    const manifest = await response.json();
+    // data.json is a manifest mapping each collection name to a file path.
+    // Load every collection file and assemble them into the `data` object.
+    const entries = Object.entries(manifest);
+    const loaded = await Promise.all(
+        entries.map(([, path]) => fetch(path).then((res) => res.json()))
+    );
+    // Reassemble in manifest order so the menu keeps a stable ordering.
+    data = {};
+    entries.forEach(([name], i) => {
+        data[name] = loaded[i];
+    });
     resolveCombinedQuestions(data);
     console.log(data);
     const collectionsDiv = document.getElementById("collections");
@@ -98,10 +126,10 @@ function displayCurrentQuestion() {
 
     setTimeout(() => {
         if (typeof currentQ === "string") {
-            question.textContent = currentQ;
+            setMathText(question, currentQ);
         } else {
-            question.textContent = currentQ.q;
-            answer.textContent = currentQ.a;
+            setMathText(question, currentQ.q);
+            setMathText(answer, currentQ.a);
             answer.classList.add("concealed");
         }
     }, 50);
@@ -172,7 +200,7 @@ function loadList() {
     listContainer.innerHTML = "";
     questions.forEach((q, i) => {
         const listItem = document.createElement("li");
-        listItem.textContent = typeof q === "string" ? q : q.q;
+        setMathText(listItem, typeof q === "string" ? q : q.q);
         listItem.style.cursor = "pointer";
         listItem.addEventListener("click", () => {
             previousQuestions.push(currentQuestion);

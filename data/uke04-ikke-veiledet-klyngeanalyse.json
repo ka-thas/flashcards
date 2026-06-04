@@ -1,0 +1,55 @@
+{
+    "title": "Uke 04 Ikke-veiledet klyngeanalyse 🪢",
+    "description": "Klyngeanalyse: K-means, hierarkisk klynging og Rocchio",
+    "credit": "Ka",
+    "questions": [
+        {
+            "q": "Ikke-veiledet læring",
+            "a": "Læring fra umerket data, der målet er å finne struktur eller mønstre uten en fasit."
+        },
+        {
+            "q": "Klyngeanalyse (clustering)",
+            "a": "Å gruppere objekter slik at like objekter havner i samme klynge, og ulike objekter i forskjellige klynger."
+        },
+        {
+            "q": "Sentroide",
+            "a": "$\\vec{\\mu} = \\dfrac{1}{|C|} \\sum_{\\vec{x} \\in C} \\vec{x}$ — gjennomsnittsvektoren til alle punktene i en klynge $C$."
+        },
+        {
+            "q": "K-means",
+            "a": "Deler data i $K$ klynger ved å minimere avstanden fra hvert punkt til klyngens sentroide."
+        },
+        {
+            "q": "K-means — stegene",
+            "a": "1) Initialiser $K$ sentroider.\n2) Tilordne hvert punkt til nærmeste sentroide.\n3) Flytt hver sentroide til gjennomsnittet av sine punkter.\n4) Gjenta 2–3 til det stabiliserer seg."
+        },
+        {
+            "q": "Klyngeintern kvadratsum (WCSS)",
+            "a": "$\\text{WCSS} = \\sum_{k=1}^{K} \\sum_{\\vec{x} \\in C_k} \\|\\vec{x} - \\vec{\\mu}_k\\|^2$ — summen av kvadrerte avstander til sentroiden; lavere er tettere klynger."
+        },
+        {
+            "q": "Albuemetoden (elbow method)",
+            "a": "Plott WCSS mot antall klynger $K$ og velg $K$ ved «albuen», der ekstra klynger gir lite ekstra gevinst."
+        },
+        {
+            "q": "Svakheter ved K-means",
+            "a": "Man må velge $K$ på forhånd, resultatet avhenger av tilfeldig initialisering, og metoden er følsom for skala og uteliggere."
+        },
+        {
+            "q": "Hierarkisk klyngeanalyse",
+            "a": "Bygger et tre av nøstede klynger. Trenger ikke å velge $K$ på forhånd og kan visualiseres som et dendrogram."
+        },
+        {
+            "q": "Agglomerativ vs. divisiv klynging",
+            "a": "Agglomerativ (bottom-up): start med ett punkt per klynge og slå sammen.\nDivisiv (top-down): start med én klynge og del opp."
+        },
+        {
+            "q": "Dendrogram",
+            "a": "Trediagram som viser hvordan klynger slås sammen, og på hvilken avstand. Kuttes på et nivå for å få et bestemt antall klynger."
+        },
+        {
+            "q": "Rocchio-algoritmen",
+            "a": "Representerer hver klasse/klynge med sin sentroide, og tilordner nye punkter til den nærmeste sentroiden."
+        }
+    ]
+}

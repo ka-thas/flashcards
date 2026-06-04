@@ -1,0 +1,55 @@
+{
+    "title": "Uke 05 Lineær regresjon 📈",
+    "description": "Regresjon, tapsfunksjon og gradientnedstigning",
+    "credit": "Ka",
+    "questions": [
+        {
+            "q": "Regresjon",
+            "a": "Veiledet oppgave der målet er å forutsi en kontinuerlig tallverdi (f.eks. pris), ikke en klasse."
+        },
+        {
+            "q": "Lineær regresjon (grunnformel)",
+            "a": "$\\hat{y} = w_0 + w_1 x_1 + \\dots + w_n x_n = w_0 + \\sum_{i=1}^{n} w_i x_i$\nEn vektet sum av trekkene pluss et konstantledd."
+        },
+        {
+            "q": "Vekt (weight)",
+            "a": "$w_i$ — hvor mye trekk $x_i$ bidrar til prediksjonen. Læres under trening."
+        },
+        {
+            "q": "Bias / skjæringspunkt",
+            "a": "$w_0$ — konstantleddet som forskyver prediksjonen; verdien når alle trekk er 0."
+        },
+        {
+            "q": "Tapsfunksjon",
+            "a": "En funksjon som måler hvor langt modellens prediksjoner er fra de sanne verdiene. Trening = minimere tapet."
+        },
+        {
+            "q": "Gjennomsnittlig kvadratfeil (MSE)",
+            "a": "$\\text{MSE} = \\dfrac{1}{m} \\sum_{i=1}^{m} (y_i - \\hat{y}_i)^2$ — standard tapsfunksjon for regresjon; straffer store feil hardt."
+        },
+        {
+            "q": "Gradientnedstigning",
+            "a": "Iterativ optimering: juster vektene i motsatt retning av gradienten til tapet, gjentatt til tapet er minimalt."
+        },
+        {
+            "q": "Læringsrate",
+            "a": "$\\eta$ — størrelsen på hvert steg i gradientnedstigning.\nFor høy → divergens; for lav → svært treg konvergens."
+        },
+        {
+            "q": "Stokastisk gradientnedstigning (SGD)",
+            "a": "Oppdaterer vektene ut fra ett (eller noen få) eksempler om gangen i stedet for hele datasettet — raskere og mer skalerbart."
+        },
+        {
+            "q": "Lineær regresjon i matriseformat",
+            "a": "$\\hat{\\mathbf{y}} = \\mathbf{X}\\mathbf{w}$ — der $\\mathbf{X}$ er datamatrisen og $\\mathbf{w}$ er vektvektoren."
+        },
+        {
+            "q": "Hvorfor skalere trekkene?",
+            "a": "Trekk på svært ulike skalaer gjør gradientnedstigning treg og skjev. Skalering gir raskere og mer stabil trening."
+        },
+        {
+            "q": "Regularisering (L1 / L2)",
+            "a": "Legger et straffeledd for store vekter til tapet for å hindre overtilpasning.\nL1 (Lasso) gir sparsomme vekter; L2 (Ridge) krymper vekter mot null."
+        }
+    ]
+}

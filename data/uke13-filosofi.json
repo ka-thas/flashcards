@@ -1,0 +1,47 @@
+{
+    "title": "Uke 13 Filosofi 🤔",
+    "description": "Filosofiske spørsmål om kunstig intelligens og bevissthet",
+    "credit": "Ka",
+    "questions": [
+        {
+            "q": "Hva er intelligens?",
+            "a": "Det finnes ingen entydig definisjon. Ofte: evnen til å lære, resonnere, tilpasse seg og løse problemer i nye situasjoner."
+        },
+        {
+            "q": "Sterk vs. svak KI",
+            "a": "Svak KI: systemer som etterligner intelligent atferd på avgrensede oppgaver.\nSterk KI: systemer med ekte forståelse og bevissthet."
+        },
+        {
+            "q": "AGI (artificial general intelligence)",
+            "a": "Hypotetisk KI med menneskelignende, generell evne til å løse et bredt spekter av oppgaver — ikke bare én spesialisert oppgave."
+        },
+        {
+            "q": "Turing-testen",
+            "a": "Foreslått av Alan Turing: en maskin «består» hvis en menneskelig dommer i en tekstsamtale ikke kan skille den fra et menneske."
+        },
+        {
+            "q": "Kritikk av Turing-testen",
+            "a": "Tester etterligning av samtale, ikke ekte forståelse. En maskin kan lure dommeren uten å «forstå» noe som helst."
+        },
+        {
+            "q": "Det kinesiske rommet (Searle)",
+            "a": "En person følger regler for å manipulere kinesiske tegn uten å forstå kinesisk. Searles poeng: symbolmanipulasjon (syntaks) gir ikke ekte forståelse (semantikk)."
+        },
+        {
+            "q": "Symbolsk KI (GOFAI)",
+            "a": "Tilnærming der intelligens er manipulasjon av eksplisitte symboler og logiske regler. Tolkbart, men sprøtt i åpne, virkelige omgivelser."
+        },
+        {
+            "q": "Konneksjonisme",
+            "a": "Tilnærming der intelligens oppstår fra mange enkle, sammenkoblede enheter (nevrale nett) som lærer fra data, ikke fra håndskrevne regler."
+        },
+        {
+            "q": "Hypotesen om det fysiske symbolsystemet",
+            "a": "Newell & Simon: et fysisk symbolsystem har de nødvendige og tilstrekkelige midlene for generell intelligent handling."
+        },
+        {
+            "q": "Kan en maskin være bevisst?",
+            "a": "Et åpent, omdiskutert spørsmål. Å oppføre seg intelligent er ikke det samme som å ha subjektiv opplevelse (bevissthet)."
+        }
+    ]
+}

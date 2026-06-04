@@ -1,0 +1,47 @@
+{
+    "title": "Uke 14 Etikk ⚖️",
+    "description": "Etiske utfordringer ved kunstig intelligens",
+    "credit": "Ka",
+    "questions": [
+        {
+            "q": "KI-etikk",
+            "a": "Fagfeltet som vurderer hvordan KI bør utvikles og brukes for å unngå skade og fremme rettferdige, ansvarlige systemer."
+        },
+        {
+            "q": "Skjevhet (bias) i data",
+            "a": "Når treningsdata gjenspeiler historiske eller skjeve mønstre, lærer modellen dem og kan videreføre eller forsterke urettferdighet."
+        },
+        {
+            "q": "Rettferdighet (fairness)",
+            "a": "At en modell behandler individer og grupper rettferdig. Det finnes flere, til dels motstridende, matematiske definisjoner av rettferdighet."
+        },
+        {
+            "q": "Diskriminering",
+            "a": "Når et KI-system systematisk gir dårligere utfall for bestemte grupper, f.eks. basert på kjønn, etnisitet eller alder."
+        },
+        {
+            "q": "Personvern og GDPR",
+            "a": "KI bruker ofte personopplysninger. GDPR setter krav om samtykke, formålsbegrensning og rettigheter som innsyn og sletting."
+        },
+        {
+            "q": "Black box-problemet",
+            "a": "Mange modeller (særlig dype nett) er vanskelige å forstå innvendig, noe som gjør det krevende å forklare og etterprøve beslutningene."
+        },
+        {
+            "q": "Transparens og forklarbarhet",
+            "a": "At det er mulig å forstå og forklare hvordan og hvorfor et system tar sine beslutninger — viktig for tillit og kontroll."
+        },
+        {
+            "q": "Ansvar (accountability)",
+            "a": "Hvem som holdes ansvarlig når et KI-system gjør feil — utvikler, eier eller bruker? Et uavklart, men sentralt spørsmål."
+        },
+        {
+            "q": "Desinformasjon og deepfakes",
+            "a": "Generativ KI kan lage overbevisende falskt innhold (tekst, bilder, video) som kan brukes til å villede og manipulere."
+        },
+        {
+            "q": "Samfunnspåvirkning",
+            "a": "KI påvirker arbeidsmarked, maktkonsentrasjon og autonome systemer (f.eks. våpen), og reiser brede spørsmål om regulering og kontroll."
+        }
+    ]
+}

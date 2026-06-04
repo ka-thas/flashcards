@@ -1,0 +1,63 @@
+{
+    "title": "Uke 07 Nevrale nettverk 🧠",
+    "description": "Nevroner, lag, aktiveringsfunksjoner og tilbakepropagering",
+    "credit": "Ka",
+    "questions": [
+        {
+            "q": "Nevron (kunstig)",
+            "a": "En enhet som tar inn vektede input, summerer dem med en bias, og sender summen gjennom en aktiveringsfunksjon."
+        },
+        {
+            "q": "Perseptron — ut-verdi",
+            "a": "$y = f\\!\\left(\\sum_{i=1}^{n} w_i x_i + b\\right)$ — der $f$ er aktiveringsfunksjonen (klassisk en terskel)."
+        },
+        {
+            "q": "Vekt og bias",
+            "a": "Vekt: hvor sterkt en input påvirker nevronet.\nBias: et konstantledd som forskyver aktiveringen. Begge læres under trening."
+        },
+        {
+            "q": "Input-, skjult og outputlag",
+            "a": "Inputlaget tar inn trekkene, skjulte lag transformerer dem, og outputlaget gir prediksjonen."
+        },
+        {
+            "q": "Aktiveringsfunksjon",
+            "a": "En ikke-lineær funksjon på nevronets output. Uten den ville hele nettverket kollapse til én lineær funksjon."
+        },
+        {
+            "q": "Sigmoid",
+            "a": "$\\sigma(z) = \\dfrac{1}{1 + e^{-z}}$ — klemmer verdier til $(0,1)$. Kan gi forsvinnende gradienter i dype nett."
+        },
+        {
+            "q": "ReLU",
+            "a": "$f(x) = \\max(0, x)$ — enkel og rask; standardvalget i skjulte lag. Lar positive verdier passere uendret."
+        },
+        {
+            "q": "Softmax",
+            "a": "Gjør outputlagets verdier om til en sannsynlighetsfordeling over klasser. Brukes i siste lag for multiklasse-klassifikasjon."
+        },
+        {
+            "q": "Terskel-funksjonen (step)",
+            "a": "$f(x) = \\begin{cases} 1 & \\text{hvis } x \\geq 0 \\\\ 0 & \\text{hvis } x < 0 \\end{cases}$ — den klassiske perseptron-aktiveringen."
+        },
+        {
+            "q": "Forover-fase (forward pass)",
+            "a": "$\\mathbf{a}^{(l)} = f\\!\\left(\\mathbf{W}^{(l)} \\mathbf{a}^{(l-1)} + \\mathbf{b}^{(l)}\\right)$ — input mates lagvis gjennom nettet til en prediksjon."
+        },
+        {
+            "q": "Tilbakepropagering (backpropagation)",
+            "a": "Beregner gradienten av tapet med hensyn til hver vekt ved å bruke kjerneregelen baklengs gjennom nettet."
+        },
+        {
+            "q": "Gradientnedstigning i nevrale nett",
+            "a": "Bruker gradientene fra tilbakepropagering til å justere vektene steg for steg slik at tapet minker."
+        },
+        {
+            "q": "Dypt nevralt nettverk",
+            "a": "Et nettverk med mange skjulte lag, som kan lære stadig mer abstrakte representasjoner av dataene."
+        },
+        {
+            "q": "Hvorfor må aktiveringen være ikke-lineær?",
+            "a": "Flere lineære lag etter hverandre er fortsatt bare lineært. Ikke-lineæritet lar nettet lære komplekse, ikke-lineære mønstre."
+        }
+    ]
+}

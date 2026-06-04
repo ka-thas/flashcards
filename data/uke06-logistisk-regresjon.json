@@ -1,0 +1,47 @@
+{
+    "title": "Uke 06 Logistisk regresjon 🎚️",
+    "description": "Klassifikasjon med sigmoid, softmax og kryssentropi",
+    "credit": "Ka",
+    "questions": [
+        {
+            "q": "Logistisk regresjon",
+            "a": "Klassifikasjonsmetode som sender en lineær kombinasjon av trekkene gjennom sigmoid-funksjonen for å gi en sannsynlighet."
+        },
+        {
+            "q": "Sigmoid-funksjonen",
+            "a": "$\\sigma(z) = \\dfrac{1}{1 + e^{-z}}$ — klemmer ethvert tall inn i intervallet $(0, 1)$, så det kan tolkes som en sannsynlighet."
+        },
+        {
+            "q": "Logistisk regresjon (2 klasser)",
+            "a": "$\\hat{y} = \\sigma(\\mathbf{w} \\cdot \\mathbf{x} + b) = \\dfrac{1}{1 + e^{-(\\mathbf{w} \\cdot \\mathbf{x} + b)}}$"
+        },
+        {
+            "q": "Hvordan fattes beslutningen?",
+            "a": "Klassifiser som positiv klasse hvis $\\hat{y} \\geq 0.5$, ellers negativ. Terskelen kan justeres etter behov."
+        },
+        {
+            "q": "Lineær vs. logistisk regresjon",
+            "a": "Lineær regresjon forutsier en kontinuerlig verdi; logistisk regresjon forutsier en sannsynlighet for en klasse."
+        },
+        {
+            "q": "Hvorfor ikke bruke MSE her?",
+            "a": "Med sigmoid blir MSE ikke-konveks og vanskelig å optimere. Kryssentropi gir en pen, konveks tapsflate."
+        },
+        {
+            "q": "Binær kryssentropi",
+            "a": "$L = -\\big[y \\log(\\hat{y}) + (1-y)\\log(1-\\hat{y})\\big]$ — straffer selvsikre, feilaktige prediksjoner hardt."
+        },
+        {
+            "q": "Softmax-funksjonen (>2 klasser)",
+            "a": "$\\text{softmax}(z_i) = \\dfrac{e^{z_i}}{\\sum_{j=1}^{K} e^{z_j}}$ — gjør en vektor av tall om til en sannsynlighetsfordeling over $K$ klasser."
+        },
+        {
+            "q": "Kategorisk kryssentropi",
+            "a": "$L = -\\sum_{i=1}^{K} y_i \\log(\\hat{y}_i)$ — tapsfunksjon for multiklasse-klassifikasjon med softmax."
+        },
+        {
+            "q": "Beslutningsgrensen til logistisk regresjon",
+            "a": "Den er lineær — et hyperplan i trekkrommet. Logistisk regresjon kan derfor ikke skille klasser som ikke er lineært separable."
+        }
+    ]
+}

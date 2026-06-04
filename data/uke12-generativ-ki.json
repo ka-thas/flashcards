@@ -1,0 +1,55 @@
+{
+    "title": "Uke 12 Generativ KI 🎨",
+    "description": "Generative modeller, språkmodeller, transformere og GAN",
+    "credit": "Ka",
+    "questions": [
+        {
+            "q": "Generativ KI",
+            "a": "Modeller som lærer fordelingen til treningsdata og kan generere nytt, lignende innhold (tekst, bilder, lyd osv.)."
+        },
+        {
+            "q": "Diskriminativ vs. generativ modell",
+            "a": "Diskriminativ modellerer $P(y\\mid x)$ (forutsi klasse fra input).\nGenerativ modellerer $P(x)$ eller $P(x, y)$ og kan lage ny data."
+        },
+        {
+            "q": "Språkmodell (LLM)",
+            "a": "En modell trent til å forutsi neste token i en tekst. Store språkmodeller (LLM) lærer bredt språk og kunnskap fra enorme tekstmengder."
+        },
+        {
+            "q": "Token",
+            "a": "En tekstbit (ord, orddel eller tegn) som er språkmodellens grunnenhet for input og output."
+        },
+        {
+            "q": "Embedding",
+            "a": "En tett vektorrepresentasjon av et token/objekt, der nærhet i vektorrommet gjenspeiler likhet i betydning."
+        },
+        {
+            "q": "Transformer",
+            "a": "Nevral arkitektur bygd på attention som behandler hele sekvensen parallelt. Grunnlaget for moderne språkmodeller."
+        },
+        {
+            "q": "Attention (oppmerksomhet)",
+            "a": "Mekanisme som lar modellen vekte hvilke andre deler av input som er relevante for hvert token når den lager en representasjon."
+        },
+        {
+            "q": "Selvveiledet fortrening",
+            "a": "Modellen lærer av umerket data ved å løse en oppgave avledet av dataene selv (f.eks. forutsi neste/maskerte token)."
+        },
+        {
+            "q": "GAN (Generative Adversarial Network)",
+            "a": "To nett som konkurrerer: en generator lager falske eksempler, en diskriminator prøver å avsløre dem. De forbedrer hverandre."
+        },
+        {
+            "q": "Diffusjonsmodell",
+            "a": "Genererer data ved å legge til støy på treningsdata og lære å reversere prosessen — fra ren støy til et nytt bilde."
+        },
+        {
+            "q": "Prompt",
+            "a": "Instruksjonen/teksten man gir en generativ modell for å styre hva den produserer."
+        },
+        {
+            "q": "Hallusinasjon",
+            "a": "Når en generativ modell produserer innhold som høres troverdig ut, men er feilaktig eller oppdiktet."
+        }
+    ]
+}
