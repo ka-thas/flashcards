@@ -2,6 +2,14 @@
 <html lang="en" data-theme="light">
     <head>
         <title>Flashcards</title>
+        <script>
+            // Apply saved/preferred theme before first paint to avoid a flash.
+            (function () {
+                const t = localStorage.getItem("theme")
+                    || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+                document.documentElement.setAttribute("data-theme", t);
+            })();
+        </script>
         <link rel="stylesheet" type="text/css" href="styles.css" />
         <link rel="icon" href="../seedling.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,6 +23,7 @@
 
     <body>
         <main id="main-menu">
+            <button id="theme-toggle" class="menu-button" aria-label="Toggle dark mode"><i data-lucide="moon"></i></button>
             <h1 style="margin-bottom: 20px" class="gradient-text">
                 Flashcards
             </h1>

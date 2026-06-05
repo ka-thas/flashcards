@@ -35,6 +35,21 @@ let currentQuestion = 0;
 let showlist = false;
 let answer = document.getElementById("answer");
 let questionContainer = document.getElementById("question-container");
+let themeToggle = document.getElementById("theme-toggle");
+
+// Theme is applied pre-paint by an inline script in index.html; here we just
+// keep the toggle button's icon in sync and persist the user's choice.
+function applyTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+    themeToggle.innerHTML = `<i data-lucide="${theme === "dark" ? "sun" : "moon"}"></i>`;
+    lucide.createIcons();
+}
+applyTheme(document.documentElement.getAttribute("data-theme") || "light");
+themeToggle.addEventListener("click", () => {
+    const current = document.documentElement.getAttribute("data-theme");
+    applyTheme(current === "dark" ? "light" : "dark");
+});
 
 function resolveCombinedQuestions(data) {
     for (const key in data) {
