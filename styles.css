@@ -138,12 +138,15 @@ button:hover {
     box-sizing: border-box;
 }
 li {
-    font-size: 16px;
+    font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
     color: var(--text);
-    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
 }
 li:hover {
-    color: var(--accent);
+    background-color: var(--secondary);
     cursor: pointer;
+    transform: scale(1.02);
+    transition: all 0.1s ease;
 }
