@@ -8,8 +8,8 @@
             "a": "En enhet som tar inn vektede input, summerer dem med en bias, og sender summen gjennom en aktiveringsfunksjon."
         },
         {
-            "q": "Perseptron — ut-verdi",
-            "a": "$y = f\\!\\left(\\sum_{i=1}^{n} w_i x_i + b\\right)$ — der $f$ er aktiveringsfunksjonen (klassisk en terskel)."
+            "q": "Perseptron: ut-verdi",
+            "a": "$y = f\\!\\left(\\sum_{i=1}^{n} w_i x_i + b\\right)$\nDer $f$ er aktiveringsfunksjonen (klassisk en terskel)."
         },
         {
             "q": "Vekt og bias",
@@ -25,11 +25,11 @@
         },
         {
             "q": "Sigmoid",
-            "a": "$\\sigma(z) = \\dfrac{1}{1 + e^{-z}}$ — klemmer verdier til $(0,1)$. Kan gi forsvinnende gradienter i dype nett."
+            "a": "$\\sigma(z) = \\dfrac{1}{1 + e^{-z}}$\nKlemmer verdier til $(0,1)$. Kan gi forsvinnende gradienter i dype nett."
         },
         {
             "q": "ReLU",
-            "a": "$f(x) = \\max(0, x)$ — enkel og rask; standardvalget i skjulte lag. Lar positive verdier passere uendret."
+            "a": "$f(x) = \\max(0, x)$\nEnkel og rask; standardvalget i skjulte lag. Lar positive verdier passere uendret."
         },
         {
             "q": "Softmax",
@@ -37,11 +37,11 @@
         },
         {
             "q": "Terskel-funksjonen (step)",
-            "a": "$f(x) = \\begin{cases} 1 & \\text{hvis } x \\geq 0 \\\\ 0 & \\text{hvis } x < 0 \\end{cases}$ — den klassiske perseptron-aktiveringen."
+            "a": "$f(x) = \\begin{cases} 1 & \\text{hvis } x \\geq 0 \\\\ 0 & \\text{hvis } x < 0 \\end{cases}$\nDen klassiske perseptron-aktiveringen."
         },
         {
             "q": "Forover-fase (forward pass)",
-            "a": "$\\mathbf{a}^{(l)} = f\\!\\left(\\mathbf{W}^{(l)} \\mathbf{a}^{(l-1)} + \\mathbf{b}^{(l)}\\right)$ — input mates lagvis gjennom nettet til en prediksjon."
+            "a": "$\\mathbf{a}^{(l)} = f\\!\\left(\\mathbf{W}^{(l)} \\mathbf{a}^{(l-1)} + \\mathbf{b}^{(l)}\\right)$\nInput mates lagvis gjennom nettet til en prediksjon."
         },
         {
             "q": "Tilbakepropagering (backpropagation)",
@@ -69,7 +69,7 @@
         },
         {
             "q": "Perseptron-læringsregelen",
-            "a": "$\\Delta w_i = \\eta\\,(y - \\hat{y})\\,x_i$ — vektene justeres proporsjonalt med feilen mellom korrekt verdi $y$ og predikert verdi $\\hat{y}$.\n$\\eta$ er læringsraten (mellom 0 og 1)."
+            "a": "$\\Delta w_i = \\eta\\,(y - \\hat{y})\\,x_i$\nVektene justeres proporsjonalt med feilen mellom korrekt verdi $y$ og predikert verdi $\\hat{y}$.\n$\\eta$ er læringsraten (mellom 0 og 1)."
         },
         {
             "q": "Hva betyr hatten i $\\hat{y}$?",
@@ -80,7 +80,7 @@
             "a": "Hvis treningsdataene er lineært separerbare og læringsraten er lav nok, konvergerer regelen til riktig klassifisering på treningssettet."
         },
         {
-            "q": "Minsky & Papert (1969) — begrensning",
+            "q": "Minsky & Papert (1969): begrensning",
             "a": "De beviste at et ettlags-perseptron kun kan løse lineært separerbare problemer. De fleste praktiske problemer er for komplekse for et enkelt perseptron."
         },
         {

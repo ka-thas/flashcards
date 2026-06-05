@@ -97,6 +97,18 @@ async function fetchCollections() {
     }
 }
 
+// Shrink the title font until it fits on one line (instead of wrapping).
+function fitTitle() {
+    title.style.fontSize = "";
+    let size = parseFloat(getComputedStyle(title).fontSize);
+    const min = 16;
+    while (title.scrollWidth > title.clientWidth && size > min) {
+        size -= 1;
+        title.style.fontSize = size + "px";
+    }
+}
+window.addEventListener("resize", fitTitle);
+
 async function loadCollection(name) {
     const url = new URL(window.location);
     url.searchParams.set("collection", name);
@@ -105,6 +117,7 @@ async function loadCollection(name) {
     document.getElementById("main-menu").style.display = "none";
     document.getElementById("flashcards").style.display = "block";
     title.textContent = data[name].title;
+    fitTitle();
 
     if (data[name]["google sheets"]) {
         const csvUrl = data[name]["google sheets"];

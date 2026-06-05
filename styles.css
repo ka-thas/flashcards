@@ -109,6 +109,13 @@ button:hover {
     margin: 10px 0 0;
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
+/* Display math ($$...$$ / \[...\]) sits on its own centered line,
+   even though the surrounding question/answer text is left-aligned. */
+.katex-display {
+    display: block;
+    text-align: center;
+    margin: 0.6em 0;
+}
 #answer.concealed {
     color: transparent;
     text-shadow: 0 0 10px var(--accent);
@@ -125,10 +132,18 @@ button:hover {
     gap: 12px;
     margin-bottom: 16px;
 }
+#title {
+    /* One line; JS (fitTitle) shrinks the font to fit instead of wrapping. */
+    font-size: 30px;
+    white-space: nowrap;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+}
 #question-container {
     /* Grow to fill the viewport (taller card, more content) while reserving
        room for the header + buttons so they stay on-screen without scrolling. */
-    height: calc(100vh - 210px);
+    height: calc(100dvh - 210px);
     min-height: 300px;
     max-height: 640px;
     overflow-y: auto;

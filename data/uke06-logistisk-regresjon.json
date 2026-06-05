@@ -9,7 +9,7 @@
         },
         {
             "q": "Sigmoid-funksjonen",
-            "a": "$\\sigma(z) = \\dfrac{1}{1 + e^{-z}}$ — klemmer ethvert tall inn i intervallet $(0, 1)$, så det kan tolkes som en sannsynlighet."
+            "a": "$\\sigma(z) = \\dfrac{1}{1 + e^{-z}}$\nKlemmer ethvert tall inn i intervallet $(0, 1)$, så det kan tolkes som en sannsynlighet."
         },
         {
             "q": "Logistisk regresjon (2 klasser)",
@@ -29,27 +29,27 @@
         },
         {
             "q": "Binær kryssentropi",
-            "a": "$L = -\\big[y \\log(\\hat{y}) + (1-y)\\log(1-\\hat{y})\\big]$ — straffer selvsikre, feilaktige prediksjoner hardt."
+            "a": "$L = -\\big[y \\log(\\hat{y}) + (1-y)\\log(1-\\hat{y})\\big]$\nStraffer selvsikre, feilaktige prediksjoner hardt."
         },
         {
             "q": "Softmax-funksjonen (>2 klasser)",
-            "a": "$\\text{softmax}(z_i) = \\dfrac{e^{z_i}}{\\sum_{j=1}^{K} e^{z_j}}$ — gjør en vektor av tall om til en sannsynlighetsfordeling over $K$ klasser."
+            "a": "$\\text{softmax}(z_i) = \\dfrac{e^{z_i}}{\\sum_{j=1}^{K} e^{z_j}}$\nGjør en vektor av tall om til en sannsynlighetsfordeling over $K$ klasser."
         },
         {
             "q": "Kategorisk kryssentropi",
-            "a": "$L = -\\sum_{i=1}^{K} y_i \\log(\\hat{y}_i)$ — tapsfunksjon for multiklasse-klassifikasjon med softmax."
+            "a": "$L = -\\sum_{i=1}^{K} y_i \\log(\\hat{y}_i)$\nTapsfunksjon for multiklasse-klassifikasjon med softmax."
         },
         {
             "q": "Beslutningsgrensen til logistisk regresjon",
-            "a": "Den er lineær — et hyperplan i trekkrommet. Logistisk regresjon kan derfor ikke skille klasser som ikke er lineært separable."
+            "a": "Den er lineær: et hyperplan i trekkrommet.\nLogistisk regresjon kan derfor ikke skille klasser som ikke er lineært separable."
         },
         {
             "q": "Skalar, vektor, matrise, tensor",
-            "a": "Skalar: et enkelt tall.\nVektor: en rekke tall (lengde $m$).\nMatrise: en tabell med $m$ rader og $n$ kolonner.\nTensor: generaliseringen — skalar = 0 dim., vektor = 1 dim., matrise = 2 dim., osv."
+            "a": "Skalar: et enkelt tall.\nVektor: en rekke tall (lengde $m$).\nMatrise: en tabell med $m$ rader og $n$ kolonner.\nTensor: generaliseringen (skalar = 0 dim., vektor = 1 dim., matrise = 2 dim., osv.)."
         },
         {
             "q": "Prikkprodukt mellom to vektorer",
-            "a": "$\\mathbf{a} \\cdot \\mathbf{b} = \\sum_{i=1}^{n} a_i b_i$ — gang sammen elementene posisjonsvis og summer. Vektorene må ha samme lengde."
+            "a": "$\\mathbf{a} \\cdot \\mathbf{b} = \\sum_{i=1}^{n} a_i b_i$\nGang sammen elementene posisjonsvis og summer. Vektorene må ha samme lengde."
         },
         {
             "q": "Elementvis produkt vs. matriseprodukt",
@@ -61,7 +61,7 @@
         },
         {
             "q": "Hvordan beregnes en celle i matriseproduktet?",
-            "a": "$c_{ij} = \\sum_{k=1}^{n} a_{ik} b_{kj}$ — prikkproduktet mellom rad $i$ i $A$ og kolonne $j$ i $B$."
+            "a": "$c_{ij} = \\sum_{k=1}^{n} a_{ik} b_{kj}$\nPrikkproduktet mellom rad $i$ i $A$ og kolonne $j$ i $B$."
         },
         {
             "q": "Lineær regresjon på matriseform",
@@ -97,11 +97,11 @@
         },
         {
             "q": "Gjennomsnittlig tap over treningssettet",
-            "a": "$\\bar{L} = \\dfrac{1}{n} \\sum_{k=1}^{n} l\\big(\\hat{y}^{(k)}, y^{(k)}\\big)$ — minimeres med stokastisk gradientnedstigning."
+            "a": "$\\bar{L} = \\dfrac{1}{n} \\sum_{k=1}^{n} l\\big(\\hat{y}^{(k)}, y^{(k)}\\big)$\nMinimeres med stokastisk gradientnedstigning."
         },
         {
             "q": "Prediksjon med argmax",
-            "a": "$c^* = \\arg\\max_{c \\in \\mathcal{C}} P(c \\mid \\mathbf{x})$ — velg den mest sannsynlige klassen. Stjernen $*$ betegner den beste verdien."
+            "a": "$c^* = \\arg\\max_{c \\in \\mathcal{C}} P(c \\mid \\mathbf{x})$\nVelg den mest sannsynlige klassen. Stjernen $*$ betegner den beste verdien."
         },
         {
             "q": "Hvordan tolke vektene i logistisk regresjon?",

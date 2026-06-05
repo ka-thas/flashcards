@@ -13,23 +13,23 @@
         },
         {
             "q": "Sentroide",
-            "a": "$\\vec{\\mu} = \\dfrac{1}{|C|} \\sum_{\\vec{x} \\in C} \\vec{x}$ — gjennomsnittsvektoren til alle punktene i en klynge $C$."
+            "a": "$\\vec{\\mu} = \\dfrac{1}{|C|} \\sum_{\\vec{x} \\in C} \\vec{x}$\nGjennomsnittsvektoren til alle punktene i en klynge $C$."
         },
         {
             "q": "K-means",
             "a": "Deler data i $K$ klynger ved å minimere avstanden fra hvert punkt til klyngens sentroide."
         },
         {
-            "q": "K-means — stegene",
-            "a": "1) Initialiser $K$ sentroider.\n2) Tilordne hvert punkt til nærmeste sentroide.\n3) Flytt hver sentroide til gjennomsnittet av sine punkter.\n4) Gjenta 2–3 til det stabiliserer seg."
+            "q": "K-means: stegene",
+            "a": "1) Initialiser $K$ sentroider.\n2) Tilordne hvert punkt til nærmeste sentroide.\n3) Flytt hver sentroide til gjennomsnittet av sine punkter.\n4) Gjenta 2-3 til det stabiliserer seg."
         },
         {
             "q": "Klyngeintern kvadratsum (WCSS)",
-            "a": "$\\text{WCSS} = \\sum_{k=1}^{K} \\sum_{\\vec{x} \\in C_k} \\|\\vec{x} - \\vec{\\mu}_k\\|^2$ — summen av kvadrerte avstander til sentroiden; lavere er tettere klynger."
+            "a": "$\\text{WCSS} = \\sum_{k=1}^{K} \\sum_{\\vec{x} \\in C_k} \\|\\vec{x} - \\vec{\\mu}_k\\|^2$\nSummen av kvadrerte avstander til sentroiden; lavere verdi betyr tettere klynger."
         },
         {
             "q": "Albuemetoden (elbow method)",
-            "a": "Plott WCSS mot antall klynger $K$ og velg $K$ ved «albuen», der ekstra klynger gir lite ekstra gevinst."
+            "a": "Plott WCSS mot antall klynger $K$ og velg $K$ ved «albuen», der flere klynger gir lite ekstra gevinst."
         },
         {
             "q": "Svakheter ved K-means",
@@ -77,7 +77,7 @@
         },
         {
             "q": "k-means: konvergens",
-            "a": "WCSS er monotont avtagende, så algoritmen konvergerer garantert — men ikke nødvendigvis til det globale minimumet. Den er ikke-deterministisk; kjør gjerne flere initialiseringer."
+            "a": "WCSS er monotont avtagende, så algoritmen konvergerer garantert, men ikke nødvendigvis til det globale minimumet.\nDen er ikke-deterministisk; kjør gjerne flere initialiseringer."
         },
         {
             "q": "k-means som gjentatt Rocchio",
@@ -89,11 +89,11 @@
         },
         {
             "q": "Enkel- vs. komplettkobling",
-            "a": "Enkelkobling: minste avstand mellom medlemmer («nærmeste naboer») — kan gi langstrakte, kjedede klynger.\nKomplettkobling: minste maks-avstand («fjerneste naboer») — gir kompakte klynger, men følsom for utliggere."
+            "a": "Enkelkobling: minste avstand mellom medlemmer («nærmeste naboer»); kan gi langstrakte, kjedede klynger.\nKomplettkobling: minste maks-avstand («fjerneste naboer»); gir kompakte klynger, men er følsom for uteliggere."
         },
         {
             "q": "Gjennomsnitts- og sentroidekobling",
-            "a": "Gjennomsnittskobling: høyest gjennomsnittlig parvis likhet — ofte beste standardvalg.\nSentroidekobling: likhet mellom klyngenes sentroider — men er ikke-monoton."
+            "a": "Gjennomsnittskobling: høyest gjennomsnittlig parvis likhet; ofte beste standardvalg.\nSentroidekobling: likhet mellom klyngenes sentroider, men ikke-monoton."
         },
         {
             "q": "Nærhetsmatrise (proximity matrix)",
@@ -101,7 +101,7 @@
         },
         {
             "q": "Monotoni og inversjoner",
-            "a": "Vanligvis antas kombinasjonslikheten å avta monotont gjennom sammenslåingene. Sentroidekobling bryter dette og kan gi inversjoner — kryssende linjer i dendrogrammet."
+            "a": "Vanligvis antas kombinasjonslikheten å avta monotont gjennom sammenslåingene. Sentroidekobling bryter dette og kan gi inversjoner: kryssende linjer i dendrogrammet."
         },
         {
             "q": "Beskjæring av dendrogrammet",

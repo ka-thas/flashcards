@@ -29,11 +29,11 @@
         },
         {
             "q": "Transparens og forklarbarhet",
-            "a": "At det er mulig å forstå og forklare hvordan og hvorfor et system tar sine beslutninger — viktig for tillit og kontroll."
+            "a": "At det er mulig å forstå og forklare hvordan og hvorfor et system tar sine beslutninger. Viktig for tillit og kontroll."
         },
         {
             "q": "Ansvar (accountability)",
-            "a": "Hvem som holdes ansvarlig når et KI-system gjør feil — utvikler, eier eller bruker? Et uavklart, men sentralt spørsmål."
+            "a": "Hvem som holdes ansvarlig når et KI-system gjør feil? Utvikler, eier eller bruker? Et uavklart, men sentralt spørsmål."
         },
         {
             "q": "Desinformasjon og deepfakes",

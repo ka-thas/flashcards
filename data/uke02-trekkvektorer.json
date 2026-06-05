@@ -9,7 +9,7 @@
         },
         {
             "q": "Trekkvektor",
-            "a": "$\\vec{x} = (x_1, x_2, \\dots, x_n)$ — en representasjon av et objekt som en liste med $n$ tallverdier, ett tall per trekk."
+            "a": "$\\vec{x} = (x_1, x_2, \\dots, x_n)$\nEn representasjon av et objekt som en liste med $n$ tallverdier, ett tall per trekk."
         },
         {
             "q": "Vektorrom",
@@ -17,11 +17,11 @@
         },
         {
             "q": "Dimensjon",
-            "a": "Antall trekk (komponenter) i en trekkvektor — altså antall akser i vektorrommet."
+            "a": "Antall trekk (komponenter) i en trekkvektor.\nAltså antall akser i vektorrommet."
         },
         {
             "q": "Lengde (norm) av en vektor",
-            "a": "$\\|\\vec{x}\\| = \\sqrt{\\sum_{i=1}^{n} x_i^2}$ — avstanden fra origo til punktet vektoren peker på."
+            "a": "$\\|\\vec{x}\\| = \\sqrt{\\sum_{i=1}^{n} x_i^2}$\nAvstanden fra origo til punktet vektoren peker på."
         },
         {
             "q": "Euklidsk avstand",
@@ -41,7 +41,7 @@
         },
         {
             "q": "Lengdenormalisering",
-            "a": "$\\hat{x} = \\dfrac{\\vec{x}}{\\|\\vec{x}\\|}$ — skalerer en vektor til lengde 1 (enhetsvektor) uten å endre retning."
+            "a": "$\\hat{x} = \\dfrac{\\vec{x}}{\\|\\vec{x}\\|}$\nSkalerer en vektor til lengde 1 (enhetsvektor) uten å endre retning."
         },
         {
             "q": "Hvorfor cosinuslikhet for tekst?",
@@ -80,11 +80,11 @@
             "a": "Vektorrom der et ords nærmeste naboer typisk er semantisk relaterte.\nSemantisk likhet → liknende kontekster → geometrisk nærhet."
         },
         {
-            "q": "Term–term-matrise",
+            "q": "Term-term-matrise",
             "a": "En $n \\times m$ matrise der radene er ordene vi modellerer og kolonnene er kontekstord; cellene teller hvor ofte de opptrer sammen."
         },
         {
-            "q": "Dokument–term-matrise",
+            "q": "Dokument-term-matrise",
             "a": "En $N \\times |V|$ matrise der hver rad er et dokuments bag-of-words-vektor og hver kolonne et ord i vokabularet."
         },
         {
@@ -105,7 +105,7 @@
         },
         {
             "q": "Tellebaserte vektorer (sparse)",
-            "a": "Tradisjonelle ordvektorer er høydimensjonale ($d = |V|$), sparse (mest nuller) og diskrete — hvert trekk svarer til ett ord/symbol."
+            "a": "Tradisjonelle ordvektorer er høydimensjonale ($d = |V|$), sparse (mest nuller) og diskrete.\nHvert trekk svarer til ett ord/symbol."
         },
         {
             "q": "Embeddings",
@@ -117,7 +117,7 @@
         },
         {
             "q": "Informasjonsgjenfinning (IR)",
-            "a": "Å finne relevante dokumenter for en søkestreng. Søket representeres som en vektor, og dokumentene rangeres etter avstand/likhet til søkevektoren — nærmeste naboer er mest relevante."
+            "a": "Å finne relevante dokumenter for en søkestreng. Søket representeres som en vektor, og dokumentene rangeres etter avstand/likhet til søkevektoren.\nNærmeste naboer er mest relevante."
         }
     ]
 }

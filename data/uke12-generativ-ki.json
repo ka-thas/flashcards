@@ -41,7 +41,7 @@
         },
         {
             "q": "Diffusjonsmodell",
-            "a": "Genererer data ved å legge til støy på treningsdata og lære å reversere prosessen — fra ren støy til et nytt bilde."
+            "a": "Genererer data ved å legge til støy på treningsdata og lære å reversere prosessen. Lærer å gå fra ren støy til et nytt bilde."
         },
         {
             "q": "Prompt",

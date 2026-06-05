@@ -13,19 +13,19 @@
         },
         {
             "q": "CART",
-            "a": "Classification and Regression Trees — algoritme som bygger binære trær ved å velge splitter som minimerer urenheten (ofte Gini)."
+            "a": "Classification and Regression Trees.\nAlgoritme som bygger binære trær ved å velge splitter som minimerer urenheten (ofte Gini)."
         },
         {
             "q": "Entropi",
-            "a": "$H(S) = -\\sum_{i=1}^{c} p_i \\log_2 p_i$ — måler urenhet/uorden i en mengde; 0 betyr helt ren (én klasse)."
+            "a": "$H(S) = -\\sum_{i=1}^{c} p_i \\log_2 p_i$\nMåler urenhet/uorden i en mengde; 0 betyr helt ren (én klasse)."
         },
         {
             "q": "Gini-urenhet",
-            "a": "$\\text{Gini}(S) = 1 - \\sum_{i=1}^{c} p_i^2$ — sannsynligheten for å klassifisere et tilfeldig element feil; lavere er renere."
+            "a": "$\\text{Gini}(S) = 1 - \\sum_{i=1}^{c} p_i^2$\nSannsynligheten for å klassifisere et tilfeldig element feil; lavere er renere."
         },
         {
             "q": "Informasjonsgevinst (information gain)",
-            "a": "$IG = H(S) - \\sum_{k} \\dfrac{|S_k|}{|S|} H(S_k)$ — reduksjonen i entropi etter en splitt. Treet velger splitten med høyest gevinst."
+            "a": "$IG = H(S) - \\sum_{k} \\dfrac{|S_k|}{|S|} H(S_k)$\nReduksjonen i entropi etter en splitt. Treet velger splitten med høyest gevinst."
         },
         {
             "q": "Overtilpasning i beslutningstrær",

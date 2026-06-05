@@ -20,12 +20,12 @@
             "a": "En kategori med $k$ verdier kodes som en binær vektor av lengde $k$ med én 1 og resten 0.\nF.eks. grønn $\\rightarrow (0, 1, 0)$."
         },
         {
-            "q": "Skalering — min-max",
-            "a": "$x' = \\dfrac{x - x_{\\min}}{x_{\\max} - x_{\\min}}$ — skalerer verdiene til intervallet $[0, 1]$."
+            "q": "Skalering: min-max",
+            "a": "$x' = \\dfrac{x - x_{\\min}}{x_{\\max} - x_{\\min}}$\nSkalerer verdiene til intervallet $[0, 1]$."
         },
         {
-            "q": "Skalering — standardisering (z-score)",
-            "a": "$x' = \\dfrac{x - \\mu}{\\sigma}$ — gir trekkene gjennomsnitt 0 og standardavvik 1."
+            "q": "Skalering: standardisering (z-score)",
+            "a": "$x' = \\dfrac{x - \\mu}{\\sigma}$\nGir trekkene gjennomsnitt 0 og standardavvik 1."
         },
         {
             "q": "Trening / validering / test",
@@ -49,7 +49,7 @@
         },
         {
             "q": "Forklarbarhet (explainability)",
-            "a": "Evnen til å forstå hvorfor en modell gir et bestemt svar. Viktig for tillit, feilsøking og ansvar — spesielt i «black box»-modeller."
+            "a": "Evnen til å forstå hvorfor en modell gir et bestemt svar. Viktig for tillit, feilsøking og ansvar, spesielt i «black box»-modeller."
         },
         {
             "q": "Garbage in, garbage out",
@@ -76,7 +76,7 @@
             "a": "Måler hvor mye verdiene i snitt avviker fra gjennomsnittet:\n$$s = \\sqrt{\\dfrac{1}{n-1}\\sum_{i=1}^{n} (x_i - \\bar{x})^2}$$\n$n-1$ i nevneren gir det korrigerte (empiriske) standardavviket for en stikkprøve."
         },
         {
-            "q": "Normalfordeling — 68-95-99,7-regelen",
+            "q": "Normalfordeling: 68-95-99,7-regelen",
             "a": "Når verdiene er normalfordelte ligger ca. 68 % innen $\\pm 1s$, ca. 95 % innen $\\pm 2s$ og ca. 99,7 % innen $\\pm 3s$ av gjennomsnittet."
         },
         {
@@ -120,7 +120,7 @@
             "a": "Metoder som motvirker overtilpasning uten å endre tapsfunksjonen:\nEarly stopping: avslutte treningen før full konvergens.\nDropout: hoppe over tilfeldige nevroner per batch.\nBeslutningstrær: begrense maks tredybde."
         },
         {
-            "q": "Modellvalg — faktorer",
+            "q": "Modellvalg: faktorer",
             "a": "Det finnes ingen «one size fits all». Vurder: trenes modellen på fasit (veiledet/uveiledet)? Hva slags output? Hvordan ser datasettet ut? Hvor kompleks bør modellen være? Hvilke kriterier teller?"
         },
         {
@@ -132,7 +132,7 @@
             "a": "Ytelse på valideringssettet er ikke alt. Andre kriterier: kjørehastighet, tolkbarhet/forklarbarhet, evne til å håndtere manglende verdier, mange eller kategoriske trekk, og robusthet mot atypiske datapunkter."
         },
         {
-            "q": "Hyperparametersøk — grid vs. tilfeldig",
+            "q": "Hyperparametersøk: grid vs. tilfeldig",
             "a": "Hyperparametere er ofte korrelerte, så vi må teste kombinasjoner.\nGrid search: prøve alle kombinasjoner (regnekrevende).\nRandom search: prøve et tilfeldig utvalg (kan gå glipp av den beste). Verktøy som optuna søker smartere."
         },
         {

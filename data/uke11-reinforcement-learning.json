@@ -25,7 +25,7 @@
         },
         {
             "q": "Fremtidig diskontert belønning",
-            "a": "$G_t = \\sum_{k=0}^{\\infty} \\gamma^k r_{t+k+1}$ — summen av fremtidige belønninger, der senere belønninger vektes lavere."
+            "a": "$G_t = \\sum_{k=0}^{\\infty} \\gamma^k r_{t+k+1}$\nSummen av fremtidige belønninger, der senere belønninger vektes lavere."
         },
         {
             "q": "Diskonteringsfaktor $\\gamma$",
@@ -33,15 +33,15 @@
         },
         {
             "q": "Q-verdi",
-            "a": "$Q(s,a)$ — forventet fremtidig diskontert belønning ved å ta handling $a$ i tilstand $s$ og deretter følge policyen."
+            "a": "$Q(s,a)$\nForventet fremtidig diskontert belønning ved å ta handling $a$ i tilstand $s$ og deretter følge policyen."
         },
         {
-            "q": "Q-læring — oppdatering",
+            "q": "Q-læring: oppdatering",
             "a": "$Q(s,a) \\leftarrow Q(s,a) + \\alpha\\big[r + \\gamma \\max_{a'} Q(s',a') - Q(s,a)\\big]$ (off-policy)."
         },
         {
-            "q": "SARSA — oppdatering",
-            "a": "$Q(s,a) \\leftarrow Q(s,a) + \\alpha\\big[r + \\gamma Q(s',a') - Q(s,a)\\big]$ (on-policy) — bruker handlingen som faktisk ble valgt."
+            "q": "SARSA: oppdatering",
+            "a": "$Q(s,a) \\leftarrow Q(s,a) + \\alpha\\big[r + \\gamma Q(s',a') - Q(s,a)\\big]$ (on-policy)\nBruker handlingen som faktisk ble valgt."
         },
         {
             "q": "Utforskning vs. utnyttelse",

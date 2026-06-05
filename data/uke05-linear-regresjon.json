@@ -13,11 +13,11 @@
         },
         {
             "q": "Vekt (weight)",
-            "a": "$w_i$ — hvor mye trekk $x_i$ bidrar til prediksjonen. Læres under trening."
+            "a": "$w_i$\nHvor mye trekk $x_i$ bidrar til prediksjonen. Læres under trening."
         },
         {
             "q": "Bias / skjæringspunkt",
-            "a": "$w_0$ — konstantleddet som forskyver prediksjonen; verdien når alle trekk er 0."
+            "a": "$w_0$\nKonstantleddet som forskyver prediksjonen; verdien når alle trekk er 0."
         },
         {
             "q": "Tapsfunksjon",
@@ -25,7 +25,7 @@
         },
         {
             "q": "Gjennomsnittlig kvadratfeil (MSE)",
-            "a": "$\\text{MSE} = \\dfrac{1}{m} \\sum_{i=1}^{m} (y_i - \\hat{y}_i)^2$ — standard tapsfunksjon for regresjon; straffer store feil hardt."
+            "a": "$\\text{MSE} = \\dfrac{1}{m} \\sum_{i=1}^{m} (y_i - \\hat{y}_i)^2$\nStandard tapsfunksjon for regresjon; straffer store feil hardt."
         },
         {
             "q": "Gradientnedstigning",
@@ -33,15 +33,15 @@
         },
         {
             "q": "Læringsrate",
-            "a": "$\\eta$ — størrelsen på hvert steg i gradientnedstigning.\nFor høy → divergens; for lav → svært treg konvergens."
+            "a": "$\\eta$\nStørrelsen på hvert steg i gradientnedstigning.\nFor høy: divergens. For lav: svært treg konvergens."
         },
         {
             "q": "Stokastisk gradientnedstigning (SGD)",
-            "a": "Oppdaterer vektene ut fra ett (eller noen få) eksempler om gangen i stedet for hele datasettet — raskere og mer skalerbart."
+            "a": "Oppdaterer vektene ut fra ett (eller noen få) eksempler om gangen i stedet for hele datasettet.\nRaskere og mer skalerbart."
         },
         {
             "q": "Lineær regresjon i matriseformat",
-            "a": "$\\hat{\\mathbf{y}} = \\mathbf{X}\\mathbf{w}$ — der $\\mathbf{X}$ er datamatrisen og $\\mathbf{w}$ er vektvektoren."
+            "a": "$\\hat{\\mathbf{y}} = \\mathbf{X}\\mathbf{w}$\nDer $\\mathbf{X}$ er datamatrisen og $\\mathbf{w}$ er vektvektoren."
         },
         {
             "q": "Hvorfor skalere trekkene?",

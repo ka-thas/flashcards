@@ -93,7 +93,7 @@
         },
         {
             "q": "Cross-Entropy Loss",
-            "a": "Loss function that penalizes incorrect, confident predictions — especially effective for classification tasks"
+            "a": "Loss function that penalizes incorrect, confident predictions. Effective for classification tasks"
         },
         {
             "q": "Binary Cross-Entropy",
